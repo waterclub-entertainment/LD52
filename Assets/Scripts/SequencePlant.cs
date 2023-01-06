@@ -20,7 +20,7 @@ public class SequencePlant : Plant {
 			return harvestReward;
 		}
 
-		return null;
+		return null; //is this an unreachable state?
 	}
 
 	public override bool Progress(Season season) {
@@ -29,7 +29,7 @@ public class SequencePlant : Plant {
 		}
 
 		// Plan survives if the season is not in forbiddenSeasons
-		return Array.IndexOf(forbiddenSeasons, season) == -1;
+		return (forbiddenSeasons == null || forbiddenSeasons.Length == 0) ? false : Array.IndexOf(forbiddenSeasons, season) == -1;
 	}
 
 }
