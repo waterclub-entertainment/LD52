@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 // Controller for animating movements of cards
 public class HandCard : MonoBehaviour {
@@ -6,7 +7,15 @@ public class HandCard : MonoBehaviour {
 	// The percentage of the animation that is completed
 	public float gotoProgress = 0.0f;
 	// The card this is representing
-	public Card card;
+	public Card card {
+		get { return _card; }
+		set {
+			_card = value;
+			Transform title = transform.Find("Card").Find("Canvas").Find("Title");
+			title.GetComponent<TextMeshProUGUI>().SetText(value.plant.title);
+		}
+	}
+	private Card _card;
 	// If this card was clicked last
 	public bool selected {
 		get { return _selected; }
