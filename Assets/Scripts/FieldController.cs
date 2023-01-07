@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FieldController : MonoBehaviour
+public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
 {
     public int X = 4;
     public int Y = 5;
     public GameObject plotPrefab;
     public Plant plant;
+    public SeasonHandler handler;
 
     PlotContext ctx;
 
@@ -18,9 +19,10 @@ public class FieldController : MonoBehaviour
         //TODO Clean
         ctx = new PlotContext(X, Y, () => { return Instantiate(plotPrefab, transform) as GameObject; });
         ctx.applyToAllEx((Plot p, PlotContext ctx, int x, int y) => { p.setup(x, y); });
+        handler.listeners.Add(this);
     }
 
-    void Step(Season season)
+    public void onSeasonChange(Season season)
     {
         //reset plots for steps
         ctx.applyToAll((Plot plt) => { plt.reset(); plt.setSeasonState(season, true); });
