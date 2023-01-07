@@ -79,6 +79,11 @@ public class Plot : MonoBehaviour
         beh.setPlant(p, x, y);
         return true;
     }
+    public GameObject getPlant()
+    {
+        return plant;
+    }
+
     public void removePlant()
     {
         if (plant)

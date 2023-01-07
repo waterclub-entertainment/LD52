@@ -42,6 +42,13 @@ public class FieldController : MonoBehaviour
         ctx.applyToAll((Plot plt) => { plt.apply(); });
     }
 
+    void Harvest(PlantBehavior beh)
+    {
+        beh.p.HarvestReward();//spawn new plant datastructure to be linked to behavior
+        ctx.getPlot(beh.p.x.Value, beh.p.y.Value).GetComponent<Plot>().removePlant();
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -56,13 +63,26 @@ public class FieldController : MonoBehaviour
             {
                 GameObject obj = hit.collider.gameObject;
                 var plt = obj.GetComponent<Plot>();
-                if(plt != null) {
+                var plnt = obj.GetComponent<PlantBehavior>();
+                if (plt != null) {
                     HandController handController = GameObject.FindObjectOfType<HandController>();
                     HandCard card = handController.GetSelected();
                     if (card != null) {
                         if (plt.setPlant(Instantiate(card.card.plant)))
                             handController.PlayCard(card);
                     }
+                    else
+                    {
+                        if (plt.getPlant() != null)
+                        {
+                            var pnt_beh = plt.getPlant().GetComponent<PlantBehavior>();
+                            Harvest(pnt_beh);
+                        }
+                    }
+                }
+                else if (plnt != null) //HARVESTING
+                {
+                    Harvest(plnt);
                 }
             }
         }
