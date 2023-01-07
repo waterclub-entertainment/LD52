@@ -13,18 +13,18 @@ public class HandController : MonoBehaviour {
 		if (Input.GetButtonDown("Submit")) {
 			Draw();
 		}
-		if (Input.GetMouseButtonDown(0)) {
-		    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			RaycastHit hit;
-			if (Physics.Raycast(ray, out hit)) {
-				HandCard hitCard = hit.transform.GetComponent<HandCard>();
-				if (hitCard != null) {
-					foreach (Transform child in transform) {
-						HandCard childCard = child.GetComponent<HandCard>();
-						childCard.selected = childCard == hitCard;
-					}
-				}
-	        }
+	    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit hit;
+		HandCard hitCard = null;
+		if (Physics.Raycast(ray, out hit)) {
+			hitCard = hit.transform.GetComponentInParent<HandCard>();
+        }
+		foreach (Transform child in transform) {
+			HandCard childCard = child.GetComponent<HandCard>();
+			if (Input.GetMouseButtonDown(0)) {
+				childCard.selected = childCard == hitCard;
+			}
+			child.GetComponent<Animator>().SetBool("Hover", childCard == hitCard);
 		}
 	}
 
@@ -53,7 +53,7 @@ public class HandController : MonoBehaviour {
 		for (int i = 0; i < transform.childCount; i++) {
 			Transform child = transform.GetChild(i);
 			Vector3 target =  new Vector3(
-				transform.position.x + firstCardX + i * cardWidth,
+				transform.position.x + firstCardX + i * cardDistance,
 				transform.position.y,
 				transform.position.z
 			);
