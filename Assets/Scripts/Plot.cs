@@ -98,12 +98,4 @@ public class Plot : MonoBehaviour
 
     }
 
-    void OnMouseButtonDown() {
-        HandController handController = GameObject.FindObjectOfType<HandController>();
-        HandCard card = handController.GetSelected();
-        if (card != null) {
-            handController.PlayCard(card);
-            setPlant(card.card.plant);
-        }
-    }
 }
