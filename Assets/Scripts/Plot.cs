@@ -23,7 +23,7 @@ public class Plot : MonoBehaviour
         this.x = x;
         this.y = y;
         if ((initialized & 1) != 0)
-            transform.Translate(new Vector3(x, 0, y));
+            transform.localPosition = new Vector3(x, 0, y);
         initialized |= 2;
         reset();
     }
@@ -89,7 +89,7 @@ public class Plot : MonoBehaviour
     void Start()
     {
         if ((initialized & 2) != 0)
-            transform.Translate(new Vector3(x, 0, y));
+            transform.localPosition = new Vector3(x, 0, y);
         initialized |= 1;
     }
 

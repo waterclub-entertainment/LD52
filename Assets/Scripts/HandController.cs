@@ -71,7 +71,8 @@ public class HandController : MonoBehaviour {
 	}
 
 	public void PlayCard(HandCard card) {
-		Destroy(card);
+		card.transform.parent = null;
+		Destroy(card.gameObject);
 		UpdateCardPositions();
 	}
 
