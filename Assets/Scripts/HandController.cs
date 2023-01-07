@@ -44,7 +44,7 @@ public class HandController : MonoBehaviour {
 				transform.position.y,
 				transform.position.z
 			);
-			child.GetComponent<CardAnimator>().GotoHand(target);
+			child.GetComponent<HandCard>().GotoHand(target);
 		}
 	}
 
