@@ -111,4 +111,13 @@ public class Plot : MonoBehaviour
             setPlant(card.card.plant);
         }
     }
+
+    void OnMouseEnter()
+    {
+        transform.position += new Vector3(0f,0.1f,0f);
+    }
+    void OnMouseExit()
+    {
+        transform.position -= new Vector3(0f, 0.1f, 0f);
+    }
 }

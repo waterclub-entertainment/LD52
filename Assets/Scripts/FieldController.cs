@@ -15,6 +15,7 @@ public class FieldController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //TODO Clean
         ctx = new PlotContext(X, Y, () => { return Instantiate(plotPrefab, transform) as GameObject; });
         ctx.applyToAllEx((Plot p, PlotContext ctx, int x, int y) => { p.setup(x, y); });
     }
