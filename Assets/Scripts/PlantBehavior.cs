@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PlantBehavior : MonoBehaviour
 {
-    public SequencePlant p;
+    public Plant p;
 
-    public void setPlant(Plant p, int x, int y)
+    public void setPlant(Plant p)
     {
-        this.p = p as SequencePlant; //move
-        this.p.OnPlant(x, y);
+        this.p = p; //move
     }
 
     // Start is called before the first frame update
@@ -21,6 +20,6 @@ public class PlantBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localScale = new Vector3(0.4f, p.getStage(), 0.4f);
+        // transform.localScale = new Vector3(0.4f, p.getStage(), 0.4f);
     }
 }

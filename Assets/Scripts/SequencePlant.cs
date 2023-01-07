@@ -40,7 +40,7 @@ public class SequencePlant : Plant {
 		return (forbiddenSeasons == null || forbiddenSeasons.Length == 0) ? true : Array.IndexOf(forbiddenSeasons, season) == -1;
 	}
 
-    public override void getEffects(Season season, ref List<Effect> effects)
+    public override void getEffects(Season season, ref List<Effect> effects, int x, int y)
     {
         //no effect
     }

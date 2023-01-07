@@ -8,14 +8,6 @@ public abstract class Plant : ScriptableObject {
 	public string title;
 	public Sprite image;
 
-    public int? x, y;
-
-    public void OnPlant(int x, int y)
-    {
-        this.x = x;
-        this.y = y;
-    }
-
 	// The reward if the plant was harvested now or null if the plant cannot be
 	// harvested at the moment
 	public abstract Card HarvestReward();
@@ -26,5 +18,5 @@ public abstract class Plant : ScriptableObject {
 	public abstract bool Progress(Season season);
 
     // TODO: Add method to receive sprite for plant
-    public abstract void getEffects(Season season, ref List<Effect> effects);
+    public abstract void getEffects(Season season, ref List<Effect> effects, int x, int y);
 }

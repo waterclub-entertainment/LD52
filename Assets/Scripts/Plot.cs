@@ -48,7 +48,7 @@ public class Plot : MonoBehaviour
     public void computeEffects(ref List<Effect> effects)
     {
         if (plant != null)
-            plant.GetComponent<PlantBehavior>().p.getEffects(actualSeason.Value, ref effects);
+            plant.GetComponent<PlantBehavior>().p.getEffects(actualSeason.Value, ref effects, x, y);
     }
     public void apply()
     {
@@ -76,7 +76,7 @@ public class Plot : MonoBehaviour
         plant.transform.SetParent(this.transform, false);
         PlantBehavior beh = plant.GetComponent<PlantBehavior>();
 
-        beh.setPlant(p, x, y);
+        beh.setPlant(p);
         return true;
     }
     public GameObject getPlant()

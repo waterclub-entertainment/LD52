@@ -43,7 +43,8 @@ public class FieldController : MonoBehaviour
     void Harvest(PlantBehavior beh)
     {
         beh.p.HarvestReward();//spawn new plant datastructure to be linked to behavior
-        ctx.getPlot(beh.p.x.Value, beh.p.y.Value).GetComponent<Plot>().removePlant();
+        Plot plot = beh.transform.parent.GetComponent<Plot>();
+        plot.removePlant();
     }
 
     // Update is called once per frame
