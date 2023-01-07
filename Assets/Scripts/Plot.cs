@@ -67,18 +67,23 @@ public class Plot : MonoBehaviour
         }
     }
 
-
-    public void setPlant(Plant p)
+    public bool setPlant(Plant p)
     {
         //maybe this should be moved down the line?
         if (plant)
-            Destroy(plant);
+            return false;
         plant = Instantiate(plantPrefab) as GameObject;
         plant.transform.SetParent(this.transform, false);
         PlantBehavior beh = plant.GetComponent<PlantBehavior>();
 
         beh.setPlant(p, x, y);
+        return true;
     }
+    public GameObject getPlant()
+    {
+        return plant;
+    }
+
     public void removePlant()
     {
         if (plant)
@@ -98,4 +103,12 @@ public class Plot : MonoBehaviour
 
     }
 
+    void OnMouseEnter()
+    {
+        transform.position += new Vector3(0f,0.1f,0f);
+    }
+    void OnMouseExit()
+    {
+        transform.position -= new Vector3(0f, 0.1f, 0f);
+    }
 }
