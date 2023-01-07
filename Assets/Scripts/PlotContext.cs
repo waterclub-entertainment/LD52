@@ -15,6 +15,14 @@ public class PlotContext
     public PlotContext()
     {
         plots = new Plot[X * Y];
+        for (int x = 0; x < X; x++)
+        {
+            for (int y = 0; y < Y; y++)
+            {
+                plots[x * Y + y] = new Plot(x, y);
+                plots[x * Y + y].reset();
+            }
+        }
     }
 
     public Plot getPlot(int x, int y)

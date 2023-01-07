@@ -6,6 +6,13 @@ public abstract class Plant : ScriptableObject {
 
 	// The name of the plant
 	public string title;
+    public int? x, y;
+
+    public void OnPlant(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+    }
 
 	// The reward if the plant was harvested now or null if the plant cannot be
 	// harvested at the moment

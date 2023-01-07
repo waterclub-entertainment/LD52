@@ -5,23 +5,31 @@ using System.Collections.Generic;
 public class Plot
 {
     Nullable<Season> actualSeason; //this keeps track of the base state. Relevant to apply multiple mutations on tick
+    int x, y;
 
     Nullable<Season> season;
 
-    Season guarded;
-
+    bool guarded;
     int tickSize;
 
     Plant plant;
+
+    public Plot(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+    }
 
     public void reset()
     {
         actualSeason = null;
         season = null;
         tickSize = 1;
+        guarded = false;
         effects.RemoveAll();
     }
 
+    //update pipeline calls
     public void setSeasonState(Season season, bool isDefault = false)
     {
         this.season = season;
@@ -29,12 +37,10 @@ public class Plot
         if (isDefault)
             actualSeason = season;
     }
-
-    public void computeEffects(Season season, ref List<Effect> effects)
+    public void computeEffects(ref List<Effect> effects)
     {
-        plant.getEffects(season, ref effects);
+        plant.getEffects(actualSeason, ref effects);
     }
-
     public void apply()
     {
         if (plant != null)
@@ -44,4 +50,19 @@ public class Plot
             //handle dissemination and spawning of new plants as mutations of neighbors?
         }
     }
+
+
+    public void setPlant(Plant p)
+    {
+        plant = p;
+        plant.OnPlant(x, y);
+    }
+
+    //TODO add mutation calls for effects.
+    bool setGuarded(bool guarding)
+    {
+        guarded = guarding;
+    }
+
+
 }

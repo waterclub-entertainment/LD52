@@ -8,7 +8,6 @@ public class FieldController : MonoBehaviour
 
     PlotContext ctx;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +22,7 @@ public class FieldController : MonoBehaviour
         List<Effect> effects = new List<Effect>();
 
         //iterate plant effects over season
-        ctx.applyToAll((Plot plt) => { return plt.computeEffects(season, ref effects); });
+        ctx.applyToAll((Plot plt) => { return plt.computeEffects(ref effects); });
 
         //TODO: order effects
         foreach (Effect e in effects)
@@ -33,7 +32,6 @@ public class FieldController : MonoBehaviour
 
         //update plants
         ctx.applyToAll((Plot plt) => { plt.apply(); });
-
     }
 
     // Update is called once per frame
