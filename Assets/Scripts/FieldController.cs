@@ -58,12 +58,18 @@ public class FieldController : MonoBehaviour
                 var plt = obj.GetComponent<Plot>();
                 if(plt != null)
                     plt.setPlant(Instantiate(plant));//spawn new plant datastructure to be linked to behavior
+
+                //HARVESTING
+                var plnt = obj.GetComponent<PlantBehavior>();
+                if (plnt != null)
+                {
+                    plnt.p.HarvestReward();//spawn new plant datastructure to be linked to behavior
+                    ctx.getPlot(plnt.p.x.Value, plnt.p.y.Value).GetComponent<Plot>().removePlant();
+                }
             }
         }
         else if (Input.GetMouseButtonDown(1))
         {
-
-
             Step(seasons[lastSeason]);
 
             lastSeason += 1;

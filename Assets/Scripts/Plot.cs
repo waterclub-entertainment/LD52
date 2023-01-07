@@ -80,6 +80,12 @@ public class Plot : MonoBehaviour
 
         beh.setPlant(p, x, y);
     }
+    public void removePlant()
+    {
+        if (plant)
+            Destroy(plant);
+        plant = null;
+    }
 
     void Start()
     {

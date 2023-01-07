@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ExamplePlant
   m_EditorClassIdentifier: 
   title: 
-  neededSeasons: 
+  neededSeasons: 010000000200000003000000
   forbiddenSeasons: 
