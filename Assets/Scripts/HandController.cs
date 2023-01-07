@@ -13,6 +13,19 @@ public class HandController : MonoBehaviour {
 		if (Input.GetButtonDown("Submit")) {
 			Draw();
 		}
+		if (Input.GetMouseButtonDown(0)) {
+		    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+			if (Physics.Raycast(ray, out hit)) {
+				HandCard hitCard = hit.transform.GetComponent<HandCard>();
+				if (hitCard != null) {
+					foreach (Transform child in transform) {
+						HandCard childCard = child.GetComponent<HandCard>();
+						childCard.selected = childCard == hitCard;
+					}
+				}
+	        }
+		}
 	}
 
 	public bool Draw() {
@@ -24,7 +37,7 @@ public class HandController : MonoBehaviour {
 
 		GameObject newCard = GameObject.Instantiate(cardPrefab, transform);
 		newCard.transform.position = stack.GetTopCardPosition();
-		newCard.GetComponent<HandCard>().SetCard(card);
+		newCard.GetComponent<HandCard>().card = card;
 		UpdateCardPositions();
 
 		return true;

@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db68f34dd48a0b559fe5e2a5bc37672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHandWidth: 5
-  maxCardDistance: 1
+  maxHandWidth: 1
+  maxCardDistance: 0.2
   cardPrefab: {fileID: 2408508332307345438, guid: 498c0c158d184762f98042433b50fc85,
     type: 3}
