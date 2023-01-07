@@ -8,7 +8,15 @@ public class HandCard : MonoBehaviour {
 	// The card this is representing
 	public Card card;
 	// If this card was clicked last
-	public bool selected = false;
+	public bool selected {
+		get { return _selected; }
+		set {
+			_selected = value;
+			transform.Find("Card").Find("Outline").GetComponent<MeshRenderer>().enabled = value;
+		}
+	}
+	private bool _selected = false;
+
 
 	// If the card has a target set
 	private bool hasTarget = false;
