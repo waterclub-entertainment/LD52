@@ -6,6 +6,8 @@ public abstract class Plant : ScriptableObject {
 
 	// The name of the plant
 	public string title;
+	public Sprite image;
+
     public int? x, y;
 
     public void OnPlant(int x, int y)

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Pumpkin
   m_EditorClassIdentifier: 
   title: Pumpkin
+  image: {fileID: -1135269395, guid: 24f0c398713edb877bbbbbddf2f50932, type: 3}
   neededSeasons: 02000000
   forbiddenSeasons: 000000000100000003000000
