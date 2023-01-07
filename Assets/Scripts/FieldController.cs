@@ -18,7 +18,7 @@ public class FieldController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ctx = new PlotContext(X, Y, () => { return Instantiate(plotPrefab) as GameObject; });
+        ctx = new PlotContext(X, Y, () => { return Instantiate(plotPrefab, transform) as GameObject; });
         ctx.applyToAllEx((Plot p, PlotContext ctx, int x, int y) => { p.setup(x, y); });
     }
 
@@ -56,26 +56,17 @@ public class FieldController : MonoBehaviour
             {
                 GameObject obj = hit.collider.gameObject;
                 var plt = obj.GetComponent<Plot>();
-                if(plt != null)
-                    plt.setPlant(Instantiate(plant));//spawn new plant datastructure to be linked to behavior
-
-                //HARVESTING
-                var plnt = obj.GetComponent<PlantBehavior>();
-                if (plnt != null)
-                {
-                    plnt.p.HarvestReward();//spawn new plant datastructure to be linked to behavior
-                    ctx.getPlot(plnt.p.x.Value, plnt.p.y.Value).GetComponent<Plot>().removePlant();
+                if(plt != null) {
+                    HandController handController = GameObject.FindObjectOfType<HandController>();
+                    HandCard card = handController.GetSelected();
+                    if (card != null) {
+                        handController.PlayCard(card);
+                        plt.setPlant(Instantiate(card.card.plant));
+                    }
                 }
             }
         }
-        else if (Input.GetMouseButtonDown(1))
-        {
-            Step(seasons[lastSeason]);
 
-            lastSeason += 1;
-            lastSeason %= 4;
-        }
-
-        //handle animations i guess. maybe poll UI event?
+        // TODO: handle animations i guess. maybe poll UI event?
     }
 }

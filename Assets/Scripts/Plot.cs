@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,7 +23,7 @@ public class Plot : MonoBehaviour
         this.x = x;
         this.y = y;
         if ((initialized & 1) != 0)
-            transform.Translate(new Vector3(x, 0, y));
+            transform.localPosition = new Vector3(x, 0, y);
         initialized |= 2;
         reset();
     }
@@ -89,12 +88,21 @@ public class Plot : MonoBehaviour
     void Start()
     {
         if ((initialized & 2) != 0)
-            transform.Translate(new Vector3(x, 0, y));
+            transform.localPosition = new Vector3(x, 0, y);
         initialized |= 1;
     }
 
     void Update()
     {
 
+    }
+
+    void OnMouseButtonDown() {
+        HandController handController = GameObject.FindObjectOfType<HandController>();
+        HandCard card = handController.GetSelected();
+        if (card != null) {
+            handController.PlayCard(card);
+            setPlant(card.card.plant);
+        }
     }
 }
