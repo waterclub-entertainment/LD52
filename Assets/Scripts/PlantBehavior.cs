@@ -18,12 +18,6 @@ public class PlantBehavior : MonoBehaviour
         
     }
 
-    void OnMouseDown()
-    {
-        p.HarvestReward();
-        Destroy(this);
-    }
-
     // Update is called once per frame
     void Update()
     {

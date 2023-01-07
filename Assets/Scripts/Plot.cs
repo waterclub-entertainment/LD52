@@ -68,7 +68,6 @@ public class Plot : MonoBehaviour
         }
     }
 
-
     public void setPlant(Plant p)
     {
         //maybe this should be moved down the line?
