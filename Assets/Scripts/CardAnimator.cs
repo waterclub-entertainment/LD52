@@ -35,4 +35,13 @@ public class CardAnimator : MonoBehaviour {
 		}
 	}
 
+	void OnMouseOver() {
+		GetComponent<Animator>().SetBool("Selected", true);
+		Debug.Log("Selected");
+	}
+
+	void OnMouseExit() {
+		GetComponent<Animator>().SetBool("Selected", false);
+	}
+
 }
