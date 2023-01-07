@@ -7,10 +7,10 @@ public class Plot
     Nullable<Season> actualSeason; //this keeps track of the base state. Relevant to apply multiple mutations on tick
     int x, y;
 
-    Nullable<Season> season;
-
-    bool guarded;
-    int tickSize;
+    //TODO add mutations for effects.
+    public Nullable<Season> season; //does this need to be a collection of seassons due to plants?
+    public bool guarded;
+    public int tickSize;
 
     Plant plant;
 
@@ -57,12 +57,4 @@ public class Plot
         plant = p;
         plant.OnPlant(x, y);
     }
-
-    //TODO add mutation calls for effects.
-    bool setGuarded(bool guarding)
-    {
-        guarded = guarding;
-    }
-
-
 }
