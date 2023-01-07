@@ -21,7 +21,7 @@ public class HandController : MonoBehaviour {
         }
 		foreach (Transform child in transform) {
 			HandCard childCard = child.GetComponent<HandCard>();
-			if (Input.GetMouseButtonDown(0)) {
+			if (Input.GetMouseButtonDown(0) && hitCard != null) {
 				childCard.selected = childCard == hitCard;
 			}
 			child.GetComponent<Animator>().SetBool("Hover", childCard == hitCard);
