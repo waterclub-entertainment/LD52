@@ -61,4 +61,18 @@ public class HandController : MonoBehaviour {
 		}
 	}
 
+	public HandCard GetSelected() {
+		foreach (HandCard handCard in GetComponentsInChildren<HandCard>()) {
+			if (handCard.selected) {
+				return handCard;
+			}
+		}
+		return null;
+	}
+
+	public void PlayCard(HandCard card) {
+		Destroy(card);
+		UpdateCardPositions();
+	}
+
 }

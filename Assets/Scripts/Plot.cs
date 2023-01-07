@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -97,5 +96,14 @@ public class Plot : MonoBehaviour
     void Update()
     {
 
+    }
+
+    void OnMouseButtonDown() {
+        HandController handController = GameObject.FindObjectOfType<HandController>();
+        HandCard card = handController.GetSelected();
+        if (card != null) {
+            handController.PlayCard(card);
+            setPlant(card.card.plant);
+        }
     }
 }
