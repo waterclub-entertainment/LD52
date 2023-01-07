@@ -6,35 +6,35 @@ using UnityEngine;
 
 public class PlotContext
 {
-    //should be changable?
-    const short Y = 4;
-    const short X = 5;
     //ravelled, X-major
-    private Plot[] plots;
+    private GameObject[] plots;
+    private int X, Y;
 
-    public PlotContext()
+    public PlotContext(int X, int Y, Func<GameObject> _constructor)
     {
-        plots = new Plot[X * Y];
+        this.X = X;
+        this.Y = Y;
+
+        plots = new GameObject[X * Y];
         for (int x = 0; x < X; x++)
         {
             for (int y = 0; y < Y; y++)
             {
-                plots[x * Y + y] = new Plot(x, y);
-                plots[x * Y + y].reset();
+                plots[x * Y + y] = _constructor();
             }
         }
     }
 
-    public Plot getPlot(int x, int y)
+    public GameObject getPlot(int x, int y)
     {
         if (!validate(x, y))
             throw new ArgumentOutOfRangeException();
         return plots[x * Y + y];
     }
 
-    public List<Plot> getNeighbors(int x, int y)
+    public List<GameObject> getNeighbors(int x, int y)
     {
-        List<Plot> plots = new List<Plot>();
+        List<GameObject> plots = new List<GameObject>();
 
         if (validate(x - 1, y))
             plots.Add(getPlot(x - 1, y));
@@ -52,22 +52,15 @@ public class PlotContext
     {
         foreach (var plot in plots)
         {
-            op(plot);
+            op(plot.GetComponent<Plot>());
         }
     }
-    public void applyToAll(Action<Plot, PlotContext> op)
-    {
-        foreach (var plot in plots)
-        {
-            op(plot, this);
-        }
-    }
-    public void applytoAll(Action<Plot, PlotContext, int, int> op)
+    public void applyToAllEx(Action<Plot, PlotContext, int, int> op)
     {
         for (int x = 0; x < X; x++)
         {
             for (int y = 0; y < Y; y++)
-                op(getPlot(x, y), this, x, y);
+                op(getPlot(x, y).GetComponent<Plot>(), this, x, y);
         }
     }
 

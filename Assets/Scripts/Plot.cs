@@ -1,32 +1,41 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class Plot
+public class Plot : MonoBehaviour
 {
     Nullable<Season> actualSeason; //this keeps track of the base state. Relevant to apply multiple mutations on tick
     int x, y;
+    int initialized = 0;
 
     //TODO add mutations for effects.
     public Nullable<Season> season; //does this need to be a collection of seassons due to plants?
     public bool guarded;
     public int tickSize;
 
-    Plant plant;
+    GameObject plant;
 
-    public Plot(int x, int y)
+    //TODO, REMOVE
+    public GameObject plantPrefab;
+
+    public void setup(int x, int y)
     {
         this.x = x;
         this.y = y;
+        if ((initialized & 1) != 0)
+            transform.Translate(new Vector3(x, 0, y));
+        initialized |= 2;
+        reset();
     }
-
     public void reset()
     {
-        actualSeason = null;
         season = null;
+
+        //reset mutations
+        actualSeason = null;
         tickSize = 1;
         guarded = false;
-        effects.RemoveAll();
     }
 
     //update pipeline calls
@@ -39,12 +48,20 @@ public class Plot
     }
     public void computeEffects(ref List<Effect> effects)
     {
-        plant.getEffects(actualSeason, ref effects);
+        if (plant != null)
+            plant.GetComponent<PlantBehavior>().p.getEffects(actualSeason.Value, ref effects);
     }
     public void apply()
     {
         if (plant != null)
-            plant.Progress(season.Value);
+        {
+            var res = plant.GetComponent<PlantBehavior>().p.Progress(season.Value);
+            if (!res) //plant ded
+            {
+                Destroy(plant);
+                plant = null;
+            }
+        }
         else
         {
             //handle dissemination and spawning of new plants as mutations of neighbors?
@@ -54,7 +71,25 @@ public class Plot
 
     public void setPlant(Plant p)
     {
-        plant = p;
-        plant.OnPlant(x, y);
+        //maybe this should be moved down the line?
+        if (plant)
+            Destroy(plant);
+        plant = Instantiate(plantPrefab) as GameObject;
+        plant.transform.SetParent(this.transform, false);
+        PlantBehavior beh = plant.GetComponent<PlantBehavior>();
+
+        beh.setPlant(p, x, y);
+    }
+
+    void Start()
+    {
+        if ((initialized & 2) != 0)
+            transform.Translate(new Vector3(x, 0, y));
+        initialized |= 1;
+    }
+
+    void Update()
+    {
+
     }
 }
