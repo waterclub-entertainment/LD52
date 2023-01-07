@@ -10,9 +10,6 @@ public class FieldController : MonoBehaviour
     public GameObject plotPrefab;
     public Plant plant;
 
-    Season[] seasons = {Season.Spring, Season.Summer, Season.Autumn, Season.Winter };
-    int lastSeason = 0;
-
     PlotContext ctx;
 
     // Start is called before the first frame update
@@ -46,7 +43,6 @@ public class FieldController : MonoBehaviour
     {
         beh.p.HarvestReward();//spawn new plant datastructure to be linked to behavior
         ctx.getPlot(beh.p.x.Value, beh.p.y.Value).GetComponent<Plot>().removePlant();
-
     }
 
     // Update is called once per frame
@@ -86,7 +82,6 @@ public class FieldController : MonoBehaviour
                 }
             }
         }
-
         // TODO: handle animations i guess. maybe poll UI event?
     }
 }
