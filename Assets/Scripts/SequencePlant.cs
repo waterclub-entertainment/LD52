@@ -1,14 +1,15 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 // Plant that needs a specific sequence of seasons to grow
 [CreateAssetMenu(menuName = "Plant/Sequence Plant")]
 public class SequencePlant : Plant {
 
 	// The seasons (in order) needed to grow the plant
-	public Season[] neededSeasons;
-	// The seasons that kill the plant
-	public Season[] forbiddenSeasons;
+	public Season[] neededSeasons; //force initialize over proxy?
+                                   // The seasons that kill the plant
+    public Season[] forbiddenSeasons; //force initialize over proxy?
 	// The reward for the plant
 	public Card harvestReward;
 
@@ -32,4 +33,8 @@ public class SequencePlant : Plant {
 		return (forbiddenSeasons == null || forbiddenSeasons.Length == 0) ? false : Array.IndexOf(forbiddenSeasons, season) == -1;
 	}
 
+    public override void getEffects(Season season, ref List<Effect> effects)
+    {
+        //no effect
+    }
 }

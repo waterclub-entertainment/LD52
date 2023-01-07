@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 // Abstract class for plants
 public abstract class Plant : ScriptableObject {
@@ -15,6 +16,6 @@ public abstract class Plant : ScriptableObject {
 	// Should return true if the plant stays alive and false if it dies
 	public abstract bool Progress(Season season);
 
-	// TODO: Add method to receive sprite for plant
-
+    // TODO: Add method to receive sprite for plant
+    public abstract void getEffects(Season season, ref List<Effect> effects);
 }
