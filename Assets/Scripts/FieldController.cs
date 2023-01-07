@@ -60,8 +60,8 @@ public class FieldController : MonoBehaviour
                     HandController handController = GameObject.FindObjectOfType<HandController>();
                     HandCard card = handController.GetSelected();
                     if (card != null) {
-                        handController.PlayCard(card);
-                        plt.setPlant(Instantiate(card.card.plant));
+                        if (plt.setPlant(Instantiate(card.card.plant)))
+                            handController.PlayCard(card);
                     }
                 }
             }

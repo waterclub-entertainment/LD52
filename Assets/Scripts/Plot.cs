@@ -67,16 +67,17 @@ public class Plot : MonoBehaviour
         }
     }
 
-    public void setPlant(Plant p)
+    public bool setPlant(Plant p)
     {
         //maybe this should be moved down the line?
         if (plant)
-            Destroy(plant);
+            return false;
         plant = Instantiate(plantPrefab) as GameObject;
         plant.transform.SetParent(this.transform, false);
         PlantBehavior beh = plant.GetComponent<PlantBehavior>();
 
         beh.setPlant(p, x, y);
+        return true;
     }
     public void removePlant()
     {
