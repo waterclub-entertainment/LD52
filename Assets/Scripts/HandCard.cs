@@ -47,12 +47,4 @@ public class HandCard : MonoBehaviour {
 		}
 	}
 
-	void OnMouseOver() {
-		GetComponent<Animator>().SetBool("Hover", true);
-	}
-
-	void OnMouseExit() {
-		GetComponent<Animator>().SetBool("Hover", false);
-	}
-
 }
