@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class FieldController : MonoBehaviour
 {
 
@@ -20,15 +19,20 @@ public class FieldController : MonoBehaviour
     {
         //reset plots for steps
         ctx.applyToAll((Plot plt) => { plt.reset(); plt.setSeasonState(season, true); });
-        
+
+        List<Effect> effects = new List<Effect>();
 
         //iterate plant effects over season
-        ctx.applyToAll((Plot plt, PlotContext ctx, int x, int y) => { plt.computeEffects(season, ctx, x, y); });
-        //possibly collect effects first then sort and compute.....
+        ctx.applyToAll((Plot plt) => { return plt.computeEffects(season, ref effects); });
 
+        //TODO: order effects
+        foreach (Effect e in effects)
+        {
+            e.applyEffect(ctx);
+        }
 
         //update plants
-        ctx.applyToAll((Plot plt) => { plt.apply();});
+        ctx.applyToAll((Plot plt) => { plt.apply(); });
 
     }
 

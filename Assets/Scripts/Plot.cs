@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class Plot
 {
     Nullable<Season> actualSeason; //this keeps track of the base state. Relevant to apply multiple mutations on tick
+
     Nullable<Season> season;
 
     Season guarded;
@@ -17,25 +18,21 @@ public class Plot
     {
         actualSeason = null;
         season = null;
-        tickSize = 0;
+        tickSize = 1;
+        effects.RemoveAll();
     }
 
     public void setSeasonState(Season season, bool isDefault = false)
     {
         this.season = season;
-
+        
         if (isDefault)
             actualSeason = season;
     }
 
-    public void computeEffects(Season season, PlotContext ctx, int x, int y)
+    public void computeEffects(Season season, ref List<Effect> effects)
     {
-        List<Effect> effects = new List<Effect>();
         plant.getEffects(season, ref effects);
-        foreach (Effect effect in effects)
-        {
-            effect.applyEffect(ctx, x, y);
-        }
     }
 
     public void apply()
