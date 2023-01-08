@@ -8,6 +8,7 @@ public class TooltipSingleton : MonoBehaviour
     public static TooltipSingleton _instance;
     public TextMeshProUGUI text;
     public SpriteIconographer iconographer;
+    public SpriteIconographer fallowIconographer;
 
     private int currentOwner;
 
@@ -30,13 +31,15 @@ public class TooltipSingleton : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void ShowTooltip(int id, string text, List<Season> seasons)
+    public void ShowTooltip(int id, string text, List<Season> seasons, List<Season> fallowSeasons)
     {
         gameObject.SetActive(true);
         this.text.text = text;
         currentOwner = id;
         iconographer.iconSeasons = seasons;
         iconographer.UpdateSequence();
+        fallowIconographer.fallowIconSeasons = fallowSeasons;
+        fallowIconographer.UpdateSequence();
     }
     public void HideTooltip(int id)
     {

@@ -10,7 +10,7 @@ public class Tooltip : MonoBehaviour
     void OnMouseEnter()
     {
         SequencePlant plnt = p.p as SequencePlant;
-        TooltipSingleton._instance.ShowTooltip(GetInstanceID(), message, new List<Season>(plnt.neededSeasons));
+        TooltipSingleton._instance.ShowTooltip(GetInstanceID(), message, new List<Season>(plnt.neededSeasons), new List<Season>(plnt.forbiddenSeasons));
     }
     //this may cause wonkyness when moving fast
     void OnMouseExit()
