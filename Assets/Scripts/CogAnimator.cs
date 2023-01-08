@@ -43,22 +43,18 @@ public class CogAnimator : MonoBehaviour, SeasonHandler.SeasonChangeListener
         if (s == Season.Spring)
         {
             goalOffset = 220.0f;
-            rotations = 0;
         }
         else if (s == Season.Summer)
         {
             goalOffset = 140.0f;
-            rotations = 0;
         }
         else if (s == Season.Autumn)
         {
             goalOffset = 45.0f;
-            rotations = 0;
         }
         else if (s == Season.Winter)
         {
             goalOffset = 320.0f;
-            rotations = 0;
         }
         windDown = 1;
     }
