@@ -85,14 +85,9 @@ public class CogAnimator : MonoBehaviour, SeasonHandler.SeasonChangeListener
         elapsedTime += Time.deltaTime;
         Pointer.obj.transform.localEulerAngles = new Vector3(0.0f, 0.0f, ((float)Math.Sin(Math.PI * 0.5f * elapsedTime / Pointer.secondsPerRotation) * PointerRotation) + 360.0f + offset);
 
-        if (windDown == 1 || (windDown != 1 && Math.Abs(offset - goalOffset) < 1.0f))
+        if ((windDown == 1) || ((windDown != 1) && (Math.Abs(offset - goalOffset) > 1.0f)))
         {
-            Debug.Log("One");
             offset += Time.deltaTime * BaseRotation / Pointer.secondsPerRotation;
-        }
-        else
-        {
-            Debug.Log("Two");
         }
         if (offset > 360.0f)
         {
