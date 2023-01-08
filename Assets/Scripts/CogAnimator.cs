@@ -14,8 +14,7 @@ public class CogAnimator : MonoBehaviour, SeasonHandler.SeasonChangeListener
 
     private float goalOffset = 220.0f;
     private float offset = 220.0f;
-    public int maxRotations = 3;
-    private int rotations = 0;
+
     private float elapsedTime;
 
     private int windDown = 0;
@@ -34,7 +33,7 @@ public class CogAnimator : MonoBehaviour, SeasonHandler.SeasonChangeListener
         handler.listeners.Add(this);
         elapsedTime = 0.0f;
         offset = goalOffset;
-        rotations = maxRotations;
+
         windDown = 0;
     }
 
