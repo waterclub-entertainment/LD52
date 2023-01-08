@@ -4,15 +4,15 @@ using System.Collections.Generic;
 public class DrawStack : MonoBehaviour {
 
 	public float cardThickness = 0.005f;
-	public Plant[] initialStack;
+	public Card[] initialStack;
 
 	private List<Card> cards;
 
 	void Start() {
 		// TODO
 		cards = new List<Card>();
-		foreach (Plant plant in initialStack) {
-			cards.Add(new Card(plant));
+		foreach (Card card in initialStack) {
+			cards.Add(Instantiate(card));
 		}
 		UpdateHeight();
 	}

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a4473193fe3c2b58bf6fbe60100243, type: 3}
   m_Name: Dandylion
   m_EditorClassIdentifier: 
-  title: Dandylion
+  prefab: {fileID: 0}
   neededSeasons: 01000000
   forbiddenSeasons: 000000000200000003000000
+  reward: {fileID: 11400000, guid: fd220c697bf15812bb2b195fbe40ef21, type: 2}

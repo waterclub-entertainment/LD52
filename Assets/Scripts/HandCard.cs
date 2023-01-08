@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 // Controller for animating movements of cards
 public class HandCard : MonoBehaviour {
@@ -11,8 +10,8 @@ public class HandCard : MonoBehaviour {
 		get { return _card; }
 		set {
 			_card = value;
-			Transform title = transform.Find("Card").Find("Canvas").Find("Title");
-			title.GetComponent<TextMeshProUGUI>().SetText(value.plant.title);
+			Transform prefabParent = transform.Find("Card").Find("Prefab");
+			GameObject.Instantiate(value.prefab, prefabParent);
 		}
 	}
 	private Card _card;
@@ -41,6 +40,7 @@ public class HandCard : MonoBehaviour {
 
 	private void SetTarget(Vector3 targetPosition) {
 		startPosition = transform.position;
+		gotoProgress = 0.0f;
 		this.targetPosition = targetPosition;
 		hasTarget = true;
 	}
