@@ -4,9 +4,6 @@ using System.Collections.Generic;
 // Abstract class for plants
 public abstract class Plant : ScriptableObject {
 
-	// The name of the plant
-	public string title;
-	public Sprite image;
     public GameObject prefab;
 
     // The reward if the plant was harvested now or null if the plant cannot be
