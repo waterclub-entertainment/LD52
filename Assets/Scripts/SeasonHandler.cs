@@ -7,6 +7,8 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "SeasonHandler", menuName = "ScriptableObjects/SeasonHandler", order = 1)]
 public class SeasonHandler : ScriptableObject
 {
+    public Animator seasonChangeAnimator;
+
     public interface SeasonChangeListener
     {
         public void onSeasonChange(Season s);

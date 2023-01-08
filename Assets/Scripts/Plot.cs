@@ -107,10 +107,10 @@ public class Plot : MonoBehaviour
 
     void OnMouseEnter()
     {
-        transform.position += new Vector3(0f,0.1f,0f);
+        transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
     }
     void OnMouseExit()
     {
-        transform.position -= new Vector3(0f, 0.1f, 0f);
+        transform.localScale = new Vector3(1f, 1f, 1f);
     }
 }

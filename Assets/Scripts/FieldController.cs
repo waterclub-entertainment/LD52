@@ -56,7 +56,10 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
     void Update()
     {
         //get clicked plots
-        if (Input.GetMouseButtonDown(0))
+        int mouseBtn = 0;
+        mouseBtn |= Input.GetMouseButtonDown(0) ? 2 : 0;
+        mouseBtn |= Input.GetMouseButtonDown(1) ? 1 : 0;
+        if (mouseBtn != 0)
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -67,7 +70,7 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
                 GameObject obj = hit.collider.gameObject;
                 var plt = obj.GetComponent<Plot>();
                 var plnt = obj.GetComponent<PlantBehavior>();
-                if (plt != null) {
+                if (plt != null && ((mouseBtn & 2) != 0)) {
                     HandController handController = GameObject.FindObjectOfType<HandController>();
                     HandCard card = handController.GetSelected();
                     if (card != null) {
@@ -83,12 +86,16 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
                         }
                     }
                 }
-                else if (plnt != null) //HARVESTING
+                else if (plnt != null) //Plant Clicking
                 {
-                    Harvest(plnt);
+                    if ((mouseBtn & 1) != 0)
+                        Harvest(plnt); //Harvesting
+                    else if ((mouseBtn & 2) != 0)
+                    {
+                        //TODO add Tooltip invokation
+                    }
                 }
             }
         }
-        // TODO: handle animations i guess. maybe poll UI event?
     }
 }
