@@ -12,7 +12,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e91dda266334714395d6f2609762d32, type: 3}
   m_Name: SeasonHandlerInstance
   m_EditorClassIdentifier: 
-  onSeasonChange:
-    m_PersistentCalls:
-      m_Calls: []
-  season: 0
