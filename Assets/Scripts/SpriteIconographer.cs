@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpriteIconographer : MonoBehaviour
 {
@@ -16,20 +17,30 @@ public class SpriteIconographer : MonoBehaviour
     public List<SeasonIcon> seasonMap;
     public Sprite FallowOverlay;
     public GameObject iconPrefab;
+
+    public int horizontalOffsetFactor;
     // Start is called before the first frame update
     void Start()
     {
+        UpdateSequence();
+    }
+
+    public void UpdateSequence()
+    {
+        foreach (Image child in GetComponentsInChildren<Image>())
+        {
+            if (child.gameObject != this.gameObject)
+                Destroy(child.gameObject);
+        }
         if (iconSeasons != null)
         {
-            float i = 0.0f;
-            foreach (Season s in iconSeasons)
+            for (int i = 0; i < iconSeasons.Count; i++)
             {
                 GameObject obj = Instantiate(iconPrefab) as GameObject;
                 obj.transform.SetParent(transform, false);
-                obj.transform.Translate(new Vector3(i, 0.0f, 0.0f));
-                i += 1.0f;
-                SpriteRenderer renderer = obj.GetComponent<SpriteRenderer> ();
-                renderer.sprite = seasonMap.Find(x => x.season == s).sprite;
+                obj.transform.Translate(i * horizontalOffsetFactor, 0, 0);
+                Image renderer = obj.GetComponent<Image>();
+                renderer.sprite = seasonMap.Find(x => x.season == iconSeasons[i]).sprite;
             }
         }
     }
