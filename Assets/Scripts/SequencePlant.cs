@@ -30,7 +30,7 @@ public class SequencePlant : Plant {
 
 	public override bool Progress(Season season) {
         if (stage == neededSeasons.Length)
-            return false; //plants that are too ripe die. Maybe change or replace later.
+            return false; //plants that are too ripe die. TODO Maybe change or replace later.
 		if (season == neededSeasons[stage]) {
 			stage++;
 		}
@@ -48,4 +48,12 @@ public class SequencePlant : Plant {
     {
         return ((float) stage) / ((float) neededSeasons.Length);
     }
+
+	public override Season? NextSeasonEffect() {
+		if (stage == neededSeasons.Length) {
+			return null;
+		}
+
+		return neededSeasons[stage];
+	}
 }

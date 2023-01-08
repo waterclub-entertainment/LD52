@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a4473193fe3c2b58bf6fbe60100243, type: 3}
   m_Name: Rose
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4957688297733508420, guid: 5319357be49e84447a9d824bd0c36793, type: 3}
+  prefab: {fileID: 6237505234684803693, guid: 374ec6b0d31663b4aa091ede62dbb71e, type: 3}
   neededSeasons: 0000000001000000
   forbiddenSeasons: 03000000
   reward: {fileID: 11400000, guid: d9a7cadd9a31cf99d82e95a3b34cf9f9, type: 2}

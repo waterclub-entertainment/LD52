@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Brass
-  m_Shader: {fileID: -6465566751694194690, guid: 13cd427fdbc1e334c91f3d0226a8df21,
+  m_Shader: {fileID: -6465566751694194690, guid: e81952b5bc49da246bb72b359e3bdc1f,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []

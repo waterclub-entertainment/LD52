@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7a4473193fe3c2b58bf6fbe60100243, type: 3}
-  m_Name: Dandylion
+  m_Name: Corn
   m_EditorClassIdentifier: 
-  prefab: {fileID: 9221785868010131787, guid: b1c504a5973679948b66bef8a8f9e3be, type: 3}
-  neededSeasons: 01000000
-  forbiddenSeasons: 000000000200000003000000
-  reward: {fileID: 11400000, guid: fd220c697bf15812bb2b195fbe40ef21, type: 2}
+  prefab: {fileID: 7140569761091108935, guid: 20cc8c0305939974592d82e724e5f510, type: 3}
+  neededSeasons: 000000000100000002000000
+  forbiddenSeasons: 03000000
+  reward: {fileID: 0}
