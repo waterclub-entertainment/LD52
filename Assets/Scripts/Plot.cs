@@ -12,6 +12,8 @@ public class Plot : MonoBehaviour
     public Nullable<Season> season; //does this need to be a collection of seassons due to plants?
     public bool guarded;
     public int tickSize;
+    [HideInInspector]
+    public bool hovering = false;
 
     GameObject plant;
 
@@ -107,15 +109,10 @@ public class Plot : MonoBehaviour
 
     void Update()
     {
-
-    }
-
-    void OnMouseEnter()
-    {
-        transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
-    }
-    void OnMouseExit()
-    {
-        transform.localScale = new Vector3(1f, 1f, 1f);
+        if (hovering) {
+            transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+        } else {
+            transform.localScale = new Vector3(1f, 1f, 1f);
+        }
     }
 }
