@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlantBehavior : MonoBehaviour
 {
     public Plant p;
+    public AudioSource src;
 
     public void setPlant(Plant p)
     {
@@ -14,7 +15,7 @@ public class PlantBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        src.Play();
     }
 
     // Update is called once per frame

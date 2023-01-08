@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Rose
   m_EditorClassIdentifier: 
   title: Rose
+  image: {fileID: 0}
+  prefab: {fileID: 4957688297733508420, guid: 5319357be49e84447a9d824bd0c36793, type: 3}
   neededSeasons: 0000000001000000
   forbiddenSeasons: 03000000
