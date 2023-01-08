@@ -56,6 +56,7 @@ public class Plot : MonoBehaviour
         if (plant != null)
         {
             var res = plant.GetComponent<PlantBehavior>().p.Progress(season.Value);
+            plant.GetComponent<PlantBehavior>().UpdateStage();
             if (!res) //plant ded
             {
                 Debug.Log("Plant Died");
