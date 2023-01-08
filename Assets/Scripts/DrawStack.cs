@@ -24,6 +24,18 @@ public class DrawStack : MonoBehaviour {
 
 		Card card = cards[cards.Count - 1];
 		cards.RemoveAt(cards.Count - 1);
+
+		if (cards.Count == 0) {
+			HarvestStack harvestStack = GameObject.FindObjectOfType<HarvestStack>();
+			Card[] rewards = harvestStack.Empty();
+			// Shuffle
+			for (int i = 0; i < rewards.Length; i++) {
+				int r = Random.Range(i, rewards.Length);
+				cards.Add(rewards[r]);
+				rewards[r] = rewards[i];
+			}
+		}
+
 		UpdateHeight();
 
 		return card;
