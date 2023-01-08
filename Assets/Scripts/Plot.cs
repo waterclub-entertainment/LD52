@@ -45,7 +45,11 @@ public class Plot : MonoBehaviour
     public void computeEffects(ref List<Effect> effects)
     {
         if (plant != null)
-            plant.GetComponent<PlantBehavior>().p.getEffects(actualSeason.Value, ref effects, x, y);
+        {
+            PlantBehavior beh = plant.GetComponent<PlantBehavior>();
+            Plant p = beh.p;
+            p.getEffects(actualSeason.Value, ref effects, x, y);
+        }
     }
     public void apply()
     {

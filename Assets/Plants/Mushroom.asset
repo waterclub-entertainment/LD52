@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a4473193fe3c2b58bf6fbe60100243, type: 3}
   m_Name: Mushroom
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 605590565168578607, guid: 701607286f5201147aa4d004fb4b1ec7, type: 3}
   neededSeasons: 0300000003000000
   forbiddenSeasons: 000000000100000002000000
   reward: {fileID: 11400000, guid: e70fb6151ec81e237b55247255849711, type: 2}
