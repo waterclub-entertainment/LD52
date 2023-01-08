@@ -14,6 +14,8 @@ public class CogAnimator : MonoBehaviour, SeasonHandler.SeasonChangeListener
 
     private float goalOffset = 220.0f;
     private float offset = 220.0f;
+    public int maxRotations = 3;
+    private int rotations = 0;
     private float elapsedTime;
 
     [Serializable]
@@ -29,6 +31,8 @@ public class CogAnimator : MonoBehaviour, SeasonHandler.SeasonChangeListener
     {
         handler.listeners.Add(this);
         elapsedTime = 0.0f;
+        offset = goalOffset;
+        rotations = maxRotations;
     }
 
     public void onSeasonChange(Season s)
@@ -37,18 +41,22 @@ public class CogAnimator : MonoBehaviour, SeasonHandler.SeasonChangeListener
         if (s == Season.Spring)
         {
             goalOffset = 220.0f;
+            rotations = 0;
         }
         else if (s == Season.Summer)
         {
             goalOffset = 140.0f;
+            rotations = 0;
         }
         else if (s == Season.Autumn)
         {
             goalOffset = 45.0f;
+            rotations = 0;
         }
         else if (s == Season.Winter)
         {
             goalOffset = 320.0f;
+            rotations = 0;
         }
     }
 
@@ -64,15 +72,16 @@ public class CogAnimator : MonoBehaviour, SeasonHandler.SeasonChangeListener
 
         //Improve
         elapsedTime += Time.deltaTime;
-        Pointer.obj.transform.localEulerAngles = new Vector3(0.0f, 0.0f, (float)Math.Sin(Math.PI * 0.5f * elapsedTime / Pointer.secondsPerRotation) * PointerRotation + offset);
+        Pointer.obj.transform.localEulerAngles = new Vector3(0.0f, 0.0f, ((float)Math.Sin(Math.PI * 0.5f * elapsedTime / Pointer.secondsPerRotation) * PointerRotation) + 360.0f + offset);
 
-        float deltaOffset = goalOffset + 360.0f - offset;
-        deltaOffset = deltaOffset * Time.deltaTime * BaseRotation / Pointer.secondsPerRotation;
-        offset += deltaOffset;
-        //modulo for float :P
-        if (offset > 720)
+        if (offset < (360.0f * (maxRotations - rotations) + goalOffset))
+        {
+            offset += Time.deltaTime * BaseRotation / Pointer.secondsPerRotation;
+        }
+        if (offset > 360.0f)
+        {
             offset -= 360.0f;
-        if (offset < 0)
-            offset += 360.0f;
+            rotations += 1;
+        }
     }
 }

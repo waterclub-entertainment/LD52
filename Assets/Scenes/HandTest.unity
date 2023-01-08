@@ -617,8 +617,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8484068703785109294, guid: 107aa4f6c990b5646901789c74094a11,
         type: 3}
-      propertyPath: Pointer.secondsPerRotation
-      value: 32
+      propertyPath: maxRotations
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8753905141844468539, guid: 107aa4f6c990b5646901789c74094a11,
         type: 3}

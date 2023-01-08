@@ -3664,7 +3664,7 @@ MonoBehaviour:
   PointerRotation: 30
   Pointer:
     obj: {fileID: 5432232525391024380}
-    secondsPerRotation: 8
+    secondsPerRotation: 4
   cogs:
   - obj: {fileID: 9006920897790974165}
     secondsPerRotation: 2
@@ -3686,6 +3686,7 @@ MonoBehaviour:
     secondsPerRotation: 8
   handler: {fileID: 11400000, guid: 6d9a27ed821c8ff4f911ebb5e04647c2, type: 2}
   animatior: {fileID: 8484068703785109293}
+  maxRotations: 3
 --- !u!1 &8805467091777213202
 GameObject:
   m_ObjectHideFlags: 0
