@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6174365874569407933}
   - component: {fileID: 8563355128715589773}
+  - component: {fileID: 7368038148336378929}
+  - component: {fileID: 9131379564774339022}
   m_Layer: 0
   m_Name: Deadshroom
   m_TagString: Untagged
@@ -47,6 +49,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 0}
   src: {fileID: 0}
+--- !u!65 &7368038148336378929
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534683394608548096}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 0.8, z: 0.3}
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &9131379564774339022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534683394608548096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1e9344c1729cd44996b18cfcecb587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: Deadshroom
 --- !u!1001 &9197576354252353523
 PrefabInstance:
   m_ObjectHideFlags: 0

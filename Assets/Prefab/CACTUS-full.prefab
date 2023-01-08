@@ -160,6 +160,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7568437888630240609}
   - component: {fileID: 677014845763369565}
+  - component: {fileID: 8961778712015171953}
+  - component: {fileID: 1741816098377101180}
   m_Layer: 0
   m_Name: CACTUS-full
   m_TagString: Untagged
@@ -197,6 +199,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 0}
   src: {fileID: 0}
+--- !u!65 &8961778712015171953
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7080694927739973595}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 0.7, z: 0.3}
+  m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!114 &1741816098377101180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7080694927739973595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1e9344c1729cd44996b18cfcecb587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: Cactus
 --- !u!1 &8939668416339054467
 GameObject:
   m_ObjectHideFlags: 0
