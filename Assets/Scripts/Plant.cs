@@ -7,10 +7,11 @@ public abstract class Plant : ScriptableObject {
 	// The name of the plant
 	public string title;
 	public Sprite image;
+    public GameObject prefab;
 
-	// The reward if the plant was harvested now or null if the plant cannot be
-	// harvested at the moment
-	public abstract Card HarvestReward();
+    // The reward if the plant was harvested now or null if the plant cannot be
+    // harvested at the moment
+    public abstract Card HarvestReward();
 
 	// Progress the growth of the plant by the given season
 	//
