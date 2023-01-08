@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571328, b: 0.3069218, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -274,7 +274,6 @@ MonoBehaviour:
   Y: 2
   plotPrefab: {fileID: 7792013042350252648, guid: 892cb79a4cdf73440bab079637073ba1,
     type: 3}
-  plant: {fileID: 11400000, guid: 76014f6d688d79f3096c3b257621ef08, type: 2}
   handler: {fileID: 11400000, guid: 6d9a27ed821c8ff4f911ebb5e04647c2, type: 2}
 --- !u!4 &695687069
 Transform:
@@ -535,7 +534,7 @@ PrefabInstance:
     - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
         type: 3}
       propertyPath: initialStack.Array.size
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
         type: 3}
@@ -608,6 +607,12 @@ PrefabInstance:
       propertyPath: initialStack.Array.data[11]
       value: 
       objectReference: {fileID: 11400000, guid: 3a71059dca41e0a5cb3049be7cf2f628,
+        type: 2}
+    - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
+        type: 3}
+      propertyPath: initialStack.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: 03270928e8a0dfb499fa17f448569c7b,
         type: 2}
     - target: {fileID: 2848648818270134642, guid: 36b34bcc5fb121c78a3c4afec94801e6,
         type: 3}
