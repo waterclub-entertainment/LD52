@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 0}
   src: {fileID: 0}
-  winterNextSeasonEffect: {fileID: 924216323959444718, guid: 5a88fa91a9ac54c4891ae70199427579,
+  winterNextSeasonEffect: {fileID: 3275452932985837187, guid: 578c214d65605d84eab44ec9cbecef52,
     type: 3}
   springNextSeasonEffect: {fileID: 924216323959444718, guid: 5a88fa91a9ac54c4891ae70199427579,
     type: 3}
