@@ -9,6 +9,7 @@ public class HarvestStack : MonoBehaviour {
 
 	void Start() {
 		rewards = new List<Card>();
+		UpdateHeight();
 	}
 
 	public void Add(Card card) {
@@ -25,9 +26,13 @@ public class HarvestStack : MonoBehaviour {
 
 	private void UpdateHeight() {
 		if (rewards.Count == 0) {
-			GetComponentInChildren<MeshRenderer>().enabled = false;
+			foreach (Transform child in transform) {
+				child.gameObject.SetActive(false);
+			}
 		} else {
-			GetComponentInChildren<MeshRenderer>().enabled = true;
+			foreach (Transform child in transform) {
+				child.gameObject.SetActive(true);
+			}
 			transform.localScale = new Vector3(1, rewards.Count * cardThickness, 1);
 		}
 	}

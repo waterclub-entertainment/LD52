@@ -47,9 +47,13 @@ public class DrawStack : MonoBehaviour {
 
 	private void UpdateHeight() {
 		if (cards.Count == 0) {
-			GetComponentInChildren<MeshRenderer>().enabled = false;
+			foreach (Transform child in transform) {
+				child.gameObject.SetActive(false);
+			}
 		} else {
-			GetComponentInChildren<MeshRenderer>().enabled = true;
+			foreach (Transform child in transform) {
+				child.gameObject.SetActive(true);
+			}
 			transform.localScale = new Vector3(1, cards.Count * cardThickness, 1);
 		}
 	}
