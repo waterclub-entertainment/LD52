@@ -18,6 +18,8 @@ public class CogAnimator : MonoBehaviour, SeasonHandler.SeasonChangeListener
     private int rotations = 0;
     private float elapsedTime;
 
+    private int windDown = 0;
+
     [Serializable]
     public class CogAnimation
     {
@@ -33,6 +35,7 @@ public class CogAnimator : MonoBehaviour, SeasonHandler.SeasonChangeListener
         elapsedTime = 0.0f;
         offset = goalOffset;
         rotations = maxRotations;
+        windDown = 0;
     }
 
     public void onSeasonChange(Season s)
@@ -58,6 +61,16 @@ public class CogAnimator : MonoBehaviour, SeasonHandler.SeasonChangeListener
             goalOffset = 320.0f;
             rotations = 0;
         }
+        windDown = 1;
+    }
+
+    public void onWindDown()
+    {
+        windDown = 2;
+    }
+    public void onWindDownEnd()
+    {
+        windDown = 0;
     }
 
     // Update is called once per frame
@@ -68,20 +81,22 @@ public class CogAnimator : MonoBehaviour, SeasonHandler.SeasonChangeListener
             cog.obj.transform.Rotate(new Vector3(0.0f, 0.0f, Time.deltaTime * BaseRotation / cog.secondsPerRotation));
         }
 
-
-
         //Improve
         elapsedTime += Time.deltaTime;
         Pointer.obj.transform.localEulerAngles = new Vector3(0.0f, 0.0f, ((float)Math.Sin(Math.PI * 0.5f * elapsedTime / Pointer.secondsPerRotation) * PointerRotation) + 360.0f + offset);
 
-        if (offset < (360.0f * (maxRotations - rotations) + goalOffset))
+        if (windDown == 1 || (windDown != 1 && Math.Abs(offset - goalOffset) < 1.0f))
         {
+            Debug.Log("One");
             offset += Time.deltaTime * BaseRotation / Pointer.secondsPerRotation;
+        }
+        else
+        {
+            Debug.Log("Two");
         }
         if (offset > 360.0f)
         {
             offset -= 360.0f;
-            rotations += 1;
         }
     }
 }
