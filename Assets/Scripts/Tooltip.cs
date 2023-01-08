@@ -16,4 +16,8 @@ public class Tooltip : MonoBehaviour
         TooltipSingleton._instance.HideTooltip(GetInstanceID());
     }
 
+    void OnDestroy()
+    {
+        TooltipSingleton._instance.HideTooltip(GetInstanceID());
+    }
 }
