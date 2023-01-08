@@ -19,13 +19,6 @@ public class DrawStack : MonoBehaviour {
 
 	public Card Pop() {
 		if (cards.Count == 0) {
-			return null;
-		}
-
-		Card card = cards[cards.Count - 1];
-		cards.RemoveAt(cards.Count - 1);
-
-		if (cards.Count == 0) {
 			HarvestStack harvestStack = GameObject.FindObjectOfType<HarvestStack>();
 			Card[] rewards = harvestStack.Empty();
 			// Shuffle
@@ -35,6 +28,13 @@ public class DrawStack : MonoBehaviour {
 				rewards[r] = rewards[i];
 			}
 		}
+		if (cards.Count == 0) {
+			Debug.Log("Game over"); // TODO
+			return null;
+		}
+
+		Card card = cards[cards.Count - 1];
+		cards.RemoveAt(cards.Count - 1);
 
 		UpdateHeight();
 
