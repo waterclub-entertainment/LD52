@@ -43,7 +43,10 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
     void Harvest(PlantBehavior beh)
     {
         HarvestStack harvestStack = GameObject.FindObjectOfType<HarvestStack>();
-        harvestStack.Add(beh.p.HarvestReward());
+        Card reward = beh.p.HarvestReward();
+        if (reward != null) {
+            harvestStack.Add(reward);
+        }
         // TODO: Animation
         Plot plot = beh.transform.parent.GetComponent<Plot>();
         plot.removePlant();
