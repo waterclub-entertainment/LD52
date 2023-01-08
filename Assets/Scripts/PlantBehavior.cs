@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlantBehavior : MonoBehaviour
@@ -15,12 +13,15 @@ public class PlantBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        src.Play();
+        if (src != null) {
+            src.Play();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        // transform.localScale = new Vector3(0.4f, p.getStage(), 0.4f);
+        float scale = p.GrowthStage() * 0.5f + 0.5f;
+        transform.localScale = new Vector3(scale, scale, scale);
     }
 }
