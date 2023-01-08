@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7792013042350252648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.0072622, y: -3.0693846, z: 0.108401395}
-  m_LocalScale: {x: 1, y: 0.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1485038276694919781}
@@ -113,8 +113,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guarded: 0
   tickSize: 0
-  plantPrefab: {fileID: 2337114713801800827, guid: c860e5a42317e164e82188d4064c3e4d,
-    type: 3}
 --- !u!1001 &1373970675265383822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135,7 +133,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 635c56539c49ca64eb00ffcd5603dfb2,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.009656687
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 635c56539c49ca64eb00ffcd5603dfb2,
         type: 3}

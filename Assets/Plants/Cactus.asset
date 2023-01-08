@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7a4473193fe3c2b58bf6fbe60100243, type: 3}
-  m_Name: Rose
+  m_Name: Cactus
   m_EditorClassIdentifier: 
-  title: Rose
+  title: Cactus
   image: {fileID: 0}
-  prefab: {fileID: 4957688297733508420, guid: 5319357be49e84447a9d824bd0c36793, type: 3}
-  neededSeasons: 0000000001000000
+  prefab: {fileID: 7080694927739973595, guid: fb2381d3f345e664a9060eaa13d117b5, type: 3}
+  neededSeasons: 010000000100000001000000
   forbiddenSeasons: 03000000

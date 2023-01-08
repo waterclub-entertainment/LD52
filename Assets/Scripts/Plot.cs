@@ -15,9 +15,6 @@ public class Plot : MonoBehaviour
 
     GameObject plant;
 
-    //TODO, REMOVE
-    public GameObject plantPrefab;
-
     public void setup(int x, int y)
     {
         this.x = x;
@@ -77,7 +74,7 @@ public class Plot : MonoBehaviour
         //maybe this should be moved down the line?
         if (plant)
             return false;
-        plant = Instantiate(plantPrefab) as GameObject;
+        plant = Instantiate(p.prefab) as GameObject;
         plant.transform.SetParent(this.transform, false);
         PlantBehavior beh = plant.GetComponent<PlantBehavior>();
 

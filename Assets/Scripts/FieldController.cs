@@ -6,7 +6,7 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
     public int X = 4;
     public int Y = 5;
     public GameObject plotPrefab;
-    public Plant plant;
+
     public SeasonHandler handler;
 
     PlotContext ctx;
