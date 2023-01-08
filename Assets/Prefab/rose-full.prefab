@@ -80,6 +80,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 0}
   src: {fileID: 4898836221536088805}
+  winterNextSeasonEffect: {fileID: 924216323959444718, guid: 5a88fa91a9ac54c4891ae70199427579,
+    type: 3}
+  springNextSeasonEffect: {fileID: 924216323959444718, guid: 5a88fa91a9ac54c4891ae70199427579,
+    type: 3}
+  summerNextSeasonEffect: {fileID: 924216323959444718, guid: 5a88fa91a9ac54c4891ae70199427579,
+    type: 3}
+  autumnNextSeasonEffect: {fileID: 924216323959444718, guid: 5a88fa91a9ac54c4891ae70199427579,
+    type: 3}
 --- !u!82 &4898836221536088805
 AudioSource:
   m_ObjectHideFlags: 0

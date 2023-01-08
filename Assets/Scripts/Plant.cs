@@ -18,6 +18,7 @@ public abstract class Plant : ScriptableObject {
 	// The growth stage of the plant as a number between 0 and 1
 	public abstract float GrowthStage();
 
-    // TODO: Add method to receive sprite for plant
     public abstract void getEffects(Season season, ref List<Effect> effects, int x, int y);
+
+    public abstract Season? NextSeasonEffect();
 }
