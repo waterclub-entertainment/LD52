@@ -45,13 +45,18 @@ public class Plot : MonoBehaviour
     public void computeEffects(ref List<Effect> effects)
     {
         if (plant != null)
-            plant.GetComponent<PlantBehavior>().p.getEffects(actualSeason.Value, ref effects, x, y);
+        {
+            PlantBehavior beh = plant.GetComponent<PlantBehavior>();
+            Plant p = beh.p;
+            p.getEffects(actualSeason.Value, ref effects, x, y);
+        }
     }
     public void apply()
     {
         if (plant != null)
         {
             var res = plant.GetComponent<PlantBehavior>().p.Progress(season.Value);
+            plant.GetComponent<PlantBehavior>().UpdateStage();
             if (!res) //plant ded
             {
                 Debug.Log("Plant Died");
