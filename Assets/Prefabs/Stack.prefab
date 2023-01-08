@@ -144,10 +144,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardThickness: 0.005
   initialStack:
+  - {fileID: 11400000, guid: 3a71059dca41e0a5cb3049be7cf2f628, type: 2}
+  - {fileID: 11400000, guid: 6e0a9cc8d3da1b5d0a2d10ce109ae7be, type: 2}
+  - {fileID: 11400000, guid: 76014f6d688d79f3096c3b257621ef08, type: 2}
+  - {fileID: 11400000, guid: 5006a0a72edd91a2ea7eeea6a5c09b7a, type: 2}
   - {fileID: 11400000, guid: 3bcdc15e163beceb2a9e835d86931526, type: 2}
   - {fileID: 11400000, guid: 5e5e82cb0aa992030bf7eb13ff61e56a, type: 2}
   - {fileID: 11400000, guid: 76014f6d688d79f3096c3b257621ef08, type: 2}
+  - {fileID: 11400000, guid: 0b72eff220381f6fc993a6131d4c9a94, type: 2}
   - {fileID: 11400000, guid: 5006a0a72edd91a2ea7eeea6a5c09b7a, type: 2}
-  - {fileID: 11400000, guid: 76014f6d688d79f3096c3b257621ef08, type: 2}
-  - {fileID: 11400000, guid: 6e0a9cc8d3da1b5d0a2d10ce109ae7be, type: 2}
-  - {fileID: 11400000, guid: 5006a0a72edd91a2ea7eeea6a5c09b7a, type: 2}
+  - {fileID: 11400000, guid: 3a71059dca41e0a5cb3049be7cf2f628, type: 2}

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Icycle
   m_EditorClassIdentifier: 
   title: Icycle
+  image: {fileID: 0}
   neededSeasons: 03000000
-  forbiddenSeasons: 000000000100000003000000
+  forbiddenSeasons: 000000000100000002000000

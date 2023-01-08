@@ -3,11 +3,20 @@ using UnityEngine;
 // Controller to manage the cards in hand
 // 
 // Cards are saved as children of the controllers gameObject
-public class HandController : MonoBehaviour {
+public class HandController : MonoBehaviour, SeasonHandler.SeasonChangeListener {
 
 	public float maxHandWidth = 1f;
 	public float maxCardDistance = 0.2f;
 	public GameObject cardPrefab;
+	public int drawPerTurn = 3;
+	public SeasonHandler seasonHandler;
+
+	void Start() {
+		for (int i = 0; i < drawPerTurn; i++) {
+			Draw();
+		}
+		seasonHandler.listeners.Add(this);
+	}
 
 	void Update() {
 		if (Input.GetButtonDown("Submit")) {
@@ -76,4 +85,10 @@ public class HandController : MonoBehaviour {
 		UpdateCardPositions();
 	}
 
+    public void onSeasonChange(Season s)
+    {
+		for (int i = 0; i < drawPerTurn; i++) {
+			Draw();
+		}
+    }
 }
