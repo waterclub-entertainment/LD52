@@ -3664,7 +3664,7 @@ MonoBehaviour:
   PointerRotation: 30
   Pointer:
     obj: {fileID: 5432232525391024380}
-    secondsPerRotation: 4
+    secondsPerRotation: 7
   cogs:
   - obj: {fileID: 9006920897790974165}
     secondsPerRotation: 2

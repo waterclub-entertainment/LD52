@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,7 +42,12 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
 
     void Harvest(PlantBehavior beh)
     {
-        beh.p.HarvestReward();//spawn new plant datastructure to be linked to behavior
+        HarvestStack harvestStack = GameObject.FindObjectOfType<HarvestStack>();
+        Card reward = beh.p.HarvestReward();
+        if (reward != null) {
+            harvestStack.Add(reward);
+        }
+        // TODO: Animation
         Plot plot = beh.transform.parent.GetComponent<Plot>();
         plot.removePlant();
     }
