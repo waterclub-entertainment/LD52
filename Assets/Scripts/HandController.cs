@@ -53,7 +53,7 @@ public class HandController : MonoBehaviour, SeasonHandler.SeasonChangeListener 
 	}
 
 	public void UpdateCardPositions() {
-		const float cardWidth = 0.2f;
+		const float cardWidth = 0.8f;
 		float cardDistance = Mathf.Min(
 			maxCardDistance,
 			(maxHandWidth - cardWidth) / (transform.childCount - 1));
