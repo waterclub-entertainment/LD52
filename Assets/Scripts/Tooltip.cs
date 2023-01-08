@@ -5,10 +5,14 @@ using UnityEngine;
 public class Tooltip : MonoBehaviour
 {
     public string message;
+    public PlantBehavior p;
 
     void OnMouseEnter()
     {
-        TooltipSingleton._instance.ShowTooltip(GetInstanceID(), message);
+        SequencePlant plnt = p.p as SequencePlant;
+        var neededSeasons = new List<Season>(plnt.neededSeasons);
+        neededSeasons = neededSeasons.GetRange(plnt.getStage(), neededSeasons.Count - plnt.getStage());
+        TooltipSingleton._instance.ShowTooltip(GetInstanceID(), message, neededSeasons, new List<Season>(plnt.forbiddenSeasons));
     }
     //this may cause wonkyness when moving fast
     void OnMouseExit()

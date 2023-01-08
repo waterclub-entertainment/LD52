@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: Rose
+  p: {fileID: 6959369268588293358}
 --- !u!65 &1031850691658712913
 BoxCollider:
   m_ObjectHideFlags: 0

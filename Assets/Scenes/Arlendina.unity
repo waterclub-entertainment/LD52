@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414729, b: 0.121078685, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -613,6 +613,70 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -89.997, z: 0}
+--- !u!1 &1097465033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1097465034}
+  - component: {fileID: 1097465035}
+  m_Layer: 5
+  m_Name: SeasonSequence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1097465034
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097465033}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1669613939}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -10}
+  m_SizeDelta: {x: 0, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1097465035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097465033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1fff7a717150d745916f763522c20c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconSeasons: 
+  fallowIconSeasons: 
+  seasonMap:
+  - season: 0
+    sprite: {fileID: 21300000, guid: 255420d0e5f673541943f36af887f42c, type: 3}
+  - season: 1
+    sprite: {fileID: 21300000, guid: 3bad1a149c68dea4aa8ef972ecbe6fbf, type: 3}
+  - season: 2
+    sprite: {fileID: 21300000, guid: db54845db9540874cbaf7a7917cb792d, type: 3}
+  - season: 3
+    sprite: {fileID: 21300000, guid: 13ddc7d789fc8f94d896c43eb0064a32, type: 3}
+  FallowOverlay: {fileID: 21300000, guid: 3cfb4f7579e646f44849b8823c867778, type: 3}
+  iconPrefab: {fileID: 1827261742335541777, guid: 4c2b74a43dd99fa4e9bc568e52b13fcb,
+    type: 3}
+  horizontalOffsetFactor: 30
 --- !u!1001 &1146200344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -687,6 +751,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4819c5c5dd4ad17d380b3ea55d5062e1, type: 3}
+--- !u!1 &1325740413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325740414}
+  - component: {fileID: 1325740415}
+  m_Layer: 5
+  m_Name: ForbiddenSeasons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1325740414
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325740413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1669613939}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 30}
+  m_SizeDelta: {x: 0, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1325740415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325740413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1fff7a717150d745916f763522c20c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconSeasons: 
+  fallowIconSeasons: 
+  seasonMap:
+  - season: 0
+    sprite: {fileID: 21300000, guid: 255420d0e5f673541943f36af887f42c, type: 3}
+  - season: 1
+    sprite: {fileID: 21300000, guid: 3bad1a149c68dea4aa8ef972ecbe6fbf, type: 3}
+  - season: 2
+    sprite: {fileID: 21300000, guid: db54845db9540874cbaf7a7917cb792d, type: 3}
+  - season: 3
+    sprite: {fileID: 21300000, guid: 13ddc7d789fc8f94d896c43eb0064a32, type: 3}
+  FallowOverlay: {fileID: 21300000, guid: 3cfb4f7579e646f44849b8823c867778, type: 3}
+  iconPrefab: {fileID: 1827261742335541777, guid: 4c2b74a43dd99fa4e9bc568e52b13fcb,
+    type: 3}
+  horizontalOffsetFactor: 30
 --- !u!4 &1343184652 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8230274392277039489, guid: 107aa4f6c990b5646901789c74094a11,
@@ -955,13 +1083,15 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2031524556}
+  - {fileID: 1097465034}
+  - {fileID: 1325740414}
   m_Father: {fileID: 1927305862}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 810, y: 490.00003}
-  m_SizeDelta: {x: 300, y: 100}
+  m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1669613940
 MonoBehaviour:
@@ -976,6 +1106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2031524557}
+  iconographer: {fileID: 1097465035}
+  fallowIconographer: {fileID: 1325740415}
 --- !u!114 &1669613941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1458,11 +1590,11 @@ RectTransform:
   m_Father: {fileID: 1669613939}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -30, y: -20}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000045776367, y: 0}
+  m_SizeDelta: {x: 0, y: 80}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2031524557
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -55,5 +55,6 @@ MonoBehaviour:
   - season: 3
     sprite: {fileID: 21300000, guid: 13ddc7d789fc8f94d896c43eb0064a32, type: 3}
   FallowOverlay: {fileID: 21300000, guid: 3cfb4f7579e646f44849b8823c867778, type: 3}
-  iconPrefab: {fileID: 2848852318225292845, guid: 4c2b74a43dd99fa4e9bc568e52b13fcb,
+  iconPrefab: {fileID: 1827261742335541777, guid: 4c2b74a43dd99fa4e9bc568e52b13fcb,
     type: 3}
+  horizontalOffsetFactor: 55

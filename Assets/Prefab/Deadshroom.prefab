@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: Deadshroom
+  p: {fileID: 8563355128715589773}
 --- !u!1001 &9197576354252353523
 PrefabInstance:
   m_ObjectHideFlags: 0
