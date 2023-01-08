@@ -57,8 +57,13 @@ public class Plot : MonoBehaviour
             var res = plant.GetComponent<PlantBehavior>().p.Progress(season.Value);
             if (!res) //plant ded
             {
+                Debug.Log("Plant Died");
                 Destroy(plant);
                 plant = null;
+            }
+            else
+            {
+                Debug.Log("Plant Grew");
             }
         }
         else

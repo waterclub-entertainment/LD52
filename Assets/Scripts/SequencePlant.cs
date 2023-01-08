@@ -14,7 +14,7 @@ public class SequencePlant : Plant {
 	public Card harvestReward;
 
 	// The current stage of the plant
-	private int stage = 0;
+	public int stage = 0;
 
     public int getStage()
     {
