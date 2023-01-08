@@ -4,15 +4,15 @@ using System.Collections.Generic;
 public class DrawStack : MonoBehaviour {
 
 	public float cardThickness = 0.005f;
-	public Plant[] initialStack;
+	public Card[] initialStack;
 
 	private List<Card> cards;
 
 	void Start() {
 		// TODO
 		cards = new List<Card>();
-		foreach (Plant plant in initialStack) {
-			cards.Add(new Card(plant));
+		foreach (Card card in initialStack) {
+			cards.Add(Instantiate(card));
 		}
 		UpdateHeight();
 	}
@@ -47,9 +47,13 @@ public class DrawStack : MonoBehaviour {
 
 	private void UpdateHeight() {
 		if (cards.Count == 0) {
-			GetComponentInChildren<MeshRenderer>().enabled = false;
+			foreach (Transform child in transform) {
+				child.gameObject.SetActive(false);
+			}
 		} else {
-			GetComponentInChildren<MeshRenderer>().enabled = true;
+			foreach (Transform child in transform) {
+				child.gameObject.SetActive(true);
+			}
 			transform.localScale = new Vector3(1, cards.Count * cardThickness, 1);
 		}
 	}

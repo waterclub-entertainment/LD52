@@ -10,6 +10,7 @@ public class SequencePlant : Plant {
 	public Season[] neededSeasons; //force initialize over proxy?
                                    // The seasons that kill the plant
     public Season[] forbiddenSeasons; //force initialize over proxy?
+	public Card reward;
 
 	// The current stage of the plant
 	private int stage = 0;
@@ -21,9 +22,7 @@ public class SequencePlant : Plant {
 
 	public override Card HarvestReward() {
 		if (stage == neededSeasons.Length) {
-			SequencePlant p = Instantiate(this);
-			p.stage = 0;
-			return new Card(p);
+			return Instantiate(reward);
 		}
 
 		return null; //is this an unreachable state? -- No, early harvest
