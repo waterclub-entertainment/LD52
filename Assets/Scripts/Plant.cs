@@ -18,6 +18,9 @@ public abstract class Plant : ScriptableObject {
 	// Should return true if the plant stays alive and false if it dies
 	public abstract bool Progress(Season season);
 
+	// The growth stage of the plant as a number between 0 and 1
+	public abstract float GrowthStage();
+
     // TODO: Add method to receive sprite for plant
     public abstract void getEffects(Season season, ref List<Effect> effects, int x, int y);
 }

@@ -44,4 +44,9 @@ public class SequencePlant : Plant {
     {
         //no effect
     }
+
+    public override float GrowthStage()
+    {
+        return ((float) stage) / ((float) neededSeasons.Length);
+    }
 }
