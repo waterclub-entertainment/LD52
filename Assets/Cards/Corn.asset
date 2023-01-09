@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Corn
   m_EditorClassIdentifier: 
   plant: {fileID: 11400000, guid: 32e132aab6e56e14fbcf7a9cd34cacaf, type: 2}
-  prefab: {fileID: 919132149155446097, guid: 88e783fdfcd28d33ea386a9af61b0b38, type: 3}
+  prefab: {fileID: 919132149155446097, guid: f85078609892259b6a639e3e0e37d8ef, type: 3}

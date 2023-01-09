@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 924216323959444718, guid: 5a88fa91a9ac54c4891ae70199427579,
         type: 3}
       propertyPath: m_Name
-      value: NeedsSummer
+      value: NeedsSpring
       objectReference: {fileID: 0}
     - target: {fileID: 5806476141017323492, guid: 5a88fa91a9ac54c4891ae70199427579,
         type: 3}
@@ -67,5 +67,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6034717949479223714, guid: 5a88fa91a9ac54c4891ae70199427579,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9046db7d79159f74fa92c481e7c02a9a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a88fa91a9ac54c4891ae70199427579, type: 3}

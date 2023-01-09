@@ -40,7 +40,7 @@ public class CogAnimator : MonoBehaviour, SeasonHandler.SeasonChangeListener
     public void onSeasonChange(Season s)
     {
         animatior.SetTrigger("WindupTrigger");
-        if (s == Season.Spring)
+        if (s == Season.Autumn)
         {
             goalOffset = 220.0f;
         }
@@ -48,7 +48,7 @@ public class CogAnimator : MonoBehaviour, SeasonHandler.SeasonChangeListener
         {
             goalOffset = 140.0f;
         }
-        else if (s == Season.Autumn)
+        else if (s == Season.Spring)
         {
             goalOffset = 45.0f;
         }
