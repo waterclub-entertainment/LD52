@@ -1,6 +1,3 @@
-using System;
-using UnityEngine;
-
 // A season
 public enum Season {
     None = 0,
