@@ -155,6 +155,7 @@ MonoBehaviour:
     type: 3}
   autumnNextSeasonEffect: {fileID: 6332921688476344077, guid: 907473efe42c4d3d39a7d4c9b0bbb956,
     type: 3}
+  animator: {fileID: 2469886375355589990}
 --- !u!114 &4315518656629636160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +267,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cabd9745657a7474899a507f5efa8849, type: 3}
+--- !u!1 &6137632512731762457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cabd9745657a7474899a507f5efa8849,
+    type: 3}
+  m_PrefabInstance: {fileID: 6479599669164831304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2469886375355589990
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6137632512731762457}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0503c3d61eb792e4d820e72e70375787, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &6802283634401449379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cabd9745657a7474899a507f5efa8849,

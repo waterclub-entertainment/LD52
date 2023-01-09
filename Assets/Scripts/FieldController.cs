@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,8 +7,17 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
     public int X = 4;
     public int Y = 5;
     public GameObject plotPrefab;
+    public GameObject harvestPrefab;
 
     public SeasonHandler handler;
+
+    [Serializable]
+    public class PlotPosition
+    {
+        public int x;
+        public int y;
+    }
+    public List<PlotPosition> fallowPlots;
 
     PlotContext ctx;
 
@@ -20,6 +30,12 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
         ctx = new PlotContext(X, Y, () => { return Instantiate(plotPrefab, transform) as GameObject; });
         ctx.applyToAllEx((Plot p, PlotContext ctx, int x, int y) => { p.setup(x, y); });
         handler.listeners.Add(this);
+
+        foreach (var coord in fallowPlots)
+        {
+            var beh = ctx.getPlot(coord.x, coord.y).GetComponent<Plot>();
+            beh.setPlantNoSound(beh.fallowPlant);
+        }
     }
 
     public void onSeasonChange(Season season)
@@ -47,11 +63,20 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
         HarvestStack harvestStack = GameObject.FindObjectOfType<HarvestStack>();
         Card reward = beh.p.HarvestReward();
         if (reward != null) {
-            harvestStack.Add(reward);
+            if (UnityEngine.Random.value > 0.5)
+            {
+                harvestStack.Add(reward);
+            }
+            else
+            {
+                harvestStack.AddHidden(reward);
+                harvestStack.MigrateCardFromHidden();
+            }
+
+            Plot plot = beh.transform.parent.GetComponent<Plot>();
+            Instantiate(harvestPrefab, plot.transform.position, Quaternion.identity);
+            plot.removePlant();
         }
-        // TODO: Animation
-        Plot plot = beh.transform.parent.GetComponent<Plot>();
-        plot.removePlant();
     }
 
     // Update is called once per frame
@@ -90,6 +115,7 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
                         {
                             var pnt_beh = plt.getPlant().GetComponent<PlantBehavior>();
                             Harvest(pnt_beh);
+
                         }
                     }
                 }

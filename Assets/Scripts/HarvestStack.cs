@@ -6,8 +6,9 @@ public class HarvestStack : MonoBehaviour {
 	public float cardThickness = 0.005f;
 
 	private List<Card> rewards;
+    public List<Card> hiddenStack = new List<Card>();
 
-	void Start() {
+    void Start() {
 		rewards = new List<Card>();
 		UpdateHeight();
 	}
@@ -15,9 +16,21 @@ public class HarvestStack : MonoBehaviour {
 	public void Add(Card card) {
 		rewards.Add(card);
 		UpdateHeight();
-	}
+    }
+    public void AddHidden(Card card)
+    {
+        hiddenStack.Add(card);
+    }
+    public void MigrateCardFromHidden()
+    {
+        if (hiddenStack.Count == 0)
+            return;
+        int index = (int)(hiddenStack.Count * UnityEngine.Random.value);
+        Add(hiddenStack[index]);
+        hiddenStack.RemoveAt(index);
+    }
 
-	public Card[] Empty() {
+    public Card[] Empty() {
 		Card[] array = rewards.ToArray();
 		rewards.Clear();
 		UpdateHeight();

@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7a4473193fe3c2b58bf6fbe60100243, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a45c461b0dcb21c2a1384c78f64adc4, type: 3}
   m_Name: Fallow
   m_EditorClassIdentifier: 
   prefab: {fileID: 6281025357597004065, guid: 76e7981c41eeb2b4cb999552192b47b1, type: 3}
   title: Fallow
-  neededSeasons: 00000000
-  forbiddenSeasons: 0
-  reward: {fileID: 0}

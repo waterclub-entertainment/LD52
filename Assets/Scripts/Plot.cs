@@ -84,9 +84,12 @@ public class Plot : MonoBehaviour
             if (!res || shouldKill) //plant ded
             {
                 Debug.Log("Plant Died (Killed: " + shouldKill.ToString() + ")");
+
                 removePlant();
                 if (spawnsFallow)
+                {
                     setPlant(fallowPlant);
+                }
             }
             else
             {
@@ -100,6 +103,20 @@ public class Plot : MonoBehaviour
 
             setPlant(spawnPlant.p);
         }
+    }
+
+    public bool setPlantNoSound(Plant p)
+    {
+        //maybe this should be moved down the line?
+        if (plant != null)
+            return false;
+        plant = Instantiate(p.prefab) as GameObject;
+        plant.GetComponent<AudioSource>().enabled = false; // no sound
+        plant.transform.SetParent(this.transform, false);
+        PlantBehavior beh = plant.GetComponent<PlantBehavior>();
+
+        beh.setPlant(p, x, y);
+        return true;
     }
 
     public bool setPlant(Plant p)
@@ -122,7 +139,13 @@ public class Plot : MonoBehaviour
     public void removePlant()
     {
         if (plant)
+        {
+            HarvestStack harvestStack = GameObject.FindObjectOfType<HarvestStack>();
+            PlantBehavior beh = plant.GetComponent<PlantBehavior>();
+            Plant p = beh.p;
+            harvestStack.AddHidden(p.HarvestReward()); //this is unsafe
             Destroy(plant);
+        }
         plant = null;
     }
 

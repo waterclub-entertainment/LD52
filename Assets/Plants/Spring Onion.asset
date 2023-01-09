@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Spring Onion
   m_EditorClassIdentifier: 
   prefab: {fileID: 7706675259742964993, guid: 4e87ddfad796da749badb7026f8fd0ea, type: 3}
-  title: Spring Onion
+  title: Spinion
   neededSeasons: 01000000
   forbiddenSeasons: 14
   reward: {fileID: 11400000, guid: bed67ab72c3ba7c639b01ad17a99be3a, type: 2}
