@@ -11,8 +11,9 @@ public class Tooltip : MonoBehaviour
     {
         SequencePlant plnt = p.p as SequencePlant;
         var neededSeasons = new List<Season>(plnt.neededSeasons);
-        neededSeasons = neededSeasons.GetRange(plnt.getStage(), neededSeasons.Count - plnt.getStage());
-        TooltipSingleton._instance.ShowTooltip(GetInstanceID(), message, neededSeasons, new List<Season>(plnt.forbiddenSeasons));
+        if ((neededSeasons.Count - plnt.getStage()) > 0)
+            neededSeasons = neededSeasons.GetRange(plnt.getStage(), neededSeasons.Count - plnt.getStage());
+        TooltipSingleton._instance.ShowTooltip(GetInstanceID(), message, neededSeasons, plnt.forbiddenSeasons);
     }
     //this may cause wonkyness when moving fast
     void OnMouseExit()

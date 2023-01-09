@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5344937261455879543}
   - component: {fileID: 3222351402912966797}
   - component: {fileID: 6015581255109758337}
+  - component: {fileID: 9194573830396620780}
   m_Layer: 0
   m_Name: Sunflower
   m_TagString: Untagged
@@ -84,6 +85,24 @@ MonoBehaviour:
     type: 3}
   autumnNextSeasonEffect: {fileID: 6332921688476344077, guid: 907473efe42c4d3d39a7d4c9b0bbb956,
     type: 3}
+--- !u!114 &9194573830396620780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938597016902227151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e1e795ecc78024181cd64c3295ecf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  y: 0
+  seasons: 
+  stageThreshold: 0.5
+  s: 1
+  disableSeason: 0
 --- !u!1001 &1033630134519124577
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ public abstract class Plant : ScriptableObject {
 	// Progress the growth of the plant by the given season
 	//
 	// Should return true if the plant stays alive and false if it dies
-	public abstract bool Progress(Season season);
+	public abstract bool Progress(Season season, Season actualSeason);
 
 	// The growth stage of the plant as a number between 0 and 1
 	public abstract float GrowthStage();

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Plot : MonoBehaviour
 {
-    Nullable<Season> actualSeason; //this keeps track of the base state. Relevant to apply multiple mutations on tick
+    Season actualSeason; //this keeps track of the base state. Relevant to apply multiple mutations on tick
     public Plant fallowPlant;
     int x, y;
     int initialized = 0;
 
     //TODO add mutations for effects.
     [HideInInspector]
-    public Nullable<Season> season; //does this need to be a collection of seassons due to plants?
+    public Season season; //does this need to be a collection of seassons due to plants?
     [HideInInspector]
     public bool guarded; //TODO
 
@@ -48,10 +48,10 @@ public class Plot : MonoBehaviour
     }
     public void reset()
     {
-        season = null;
+        season = Season.None;
 
         //reset mutations
-        actualSeason = null;
+        actualSeason = Season.None;
         tickSize = 1;
         guarded = false;
         shouldKill = false;
@@ -72,14 +72,14 @@ public class Plot : MonoBehaviour
         {
             PlantBehavior beh = plant.GetComponent<PlantBehavior>();
             Plant p = beh.p;
-            p.getEffects(actualSeason.Value, ref effects);
+            p.getEffects(actualSeason, ref effects);
         }
     }
     public void apply()
     {
         if (plant != null && (spawnPlant == null || !spawnPlant.replace))
         {
-            var res = plant.GetComponent<PlantBehavior>().p.Progress(season.Value);
+            var res = plant.GetComponent<PlantBehavior>().p.Progress(season, actualSeason);
             plant.GetComponent<PlantBehavior>().UpdateStage();
             if (!res || shouldKill) //plant ded
             {
