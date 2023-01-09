@@ -11,6 +11,8 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
 
     PlotContext ctx;
 
+    private Plot lastHoveredPlot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,22 +57,24 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
     // Update is called once per frame
     void Update()
     {
-        //get clicked plots
-        int mouseBtn = 0;
-        mouseBtn |= Input.GetMouseButtonDown(0) ? 2 : 0;
-        mouseBtn |= Input.GetMouseButtonDown(1) ? 1 : 0;
-        if (mouseBtn != 0)
+        foreach (Plot plot in GetComponentsInChildren<Plot>()) {
+            plot.hovering = false;
+        }
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        RaycastHit hit = new RaycastHit();
+
+        if (Physics.Raycast(ray, out hit))
         {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit hit = new RaycastHit();
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                GameObject obj = hit.collider.gameObject;
-                var plt = obj.GetComponent<Plot>();
-                var plnt = obj.GetComponent<PlantBehavior>();
-                if (plt != null && ((mouseBtn & 2) != 0)) {
+            GameObject obj = hit.collider.gameObject;
+            var plt = obj.GetComponent<Plot>();
+            var plnt = obj.GetComponent<PlantBehavior>();
+            if (plnt != null) {
+                plt = obj.transform.parent.GetComponent<Plot>();
+            }
+            if (plt != null) {
+                plt.hovering = true;
+                if (Input.GetMouseButtonDown(0)) {
                     HandController handController = GameObject.FindObjectOfType<HandController>();
                     HandCard card = handController.GetSelected();
                     if (card != null) {
@@ -86,15 +90,6 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
                             var pnt_beh = plt.getPlant().GetComponent<PlantBehavior>();
                             Harvest(pnt_beh);
                         }
-                    }
-                }
-                else if (plnt != null) //Plant Clicking
-                {
-                    if ((mouseBtn & 1) != 0)
-                        Harvest(plnt); //Harvesting
-                    else if ((mouseBtn & 2) != 0)
-                    {
-                        //TODO add Tooltip invokation
                     }
                 }
             }

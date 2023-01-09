@@ -146,13 +146,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 0}
   src: {fileID: 1759540998530101701}
-  winterNextSeasonEffect: {fileID: 3275452932985837187, guid: 578c214d65605d84eab44ec9cbecef52,
+  winterNextSeasonEffect: {fileID: 6332921688476344077, guid: 1a8069bc928068380be1e62ecfbff730,
     type: 3}
-  springNextSeasonEffect: {fileID: 924216323959444718, guid: 5a88fa91a9ac54c4891ae70199427579,
+  springNextSeasonEffect: {fileID: 6332921688476344077, guid: 7adcb643868098e19b9d4d7998b464c8,
     type: 3}
   summerNextSeasonEffect: {fileID: 924216323959444718, guid: 5a88fa91a9ac54c4891ae70199427579,
     type: 3}
-  autumnNextSeasonEffect: {fileID: 924216323959444718, guid: 5a88fa91a9ac54c4891ae70199427579,
+  autumnNextSeasonEffect: {fileID: 6332921688476344077, guid: 907473efe42c4d3d39a7d4c9b0bbb956,
     type: 3}
 --- !u!114 &4315518656629636160
 MonoBehaviour:
