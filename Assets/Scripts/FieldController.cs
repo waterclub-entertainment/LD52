@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,14 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
 
     public SeasonHandler handler;
 
+    [Serializable]
+    public class PlotPosition
+    {
+        public int x;
+        public int y;
+    }
+    public List<PlotPosition> fallowPlots;
+
     PlotContext ctx;
 
     private Plot lastHoveredPlot;
@@ -21,6 +30,12 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
         ctx = new PlotContext(X, Y, () => { return Instantiate(plotPrefab, transform) as GameObject; });
         ctx.applyToAllEx((Plot p, PlotContext ctx, int x, int y) => { p.setup(x, y); });
         handler.listeners.Add(this);
+
+        foreach (var coord in fallowPlots)
+        {
+            var beh = ctx.getPlot(coord.x, coord.y).GetComponent<Plot>();
+            beh.setPlant(beh.fallowPlant);
+        }
     }
 
     public void onSeasonChange(Season season)
