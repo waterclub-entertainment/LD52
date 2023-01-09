@@ -19,7 +19,7 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
     }
     public List<PlotPosition> fallowPlots;
 
-    PlotContext ctx;
+    public PlotContext ctx;
 
     private Plot lastHoveredPlot;
 
