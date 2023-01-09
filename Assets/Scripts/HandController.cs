@@ -37,6 +37,21 @@ public class HandController : MonoBehaviour, SeasonHandler.SeasonChangeListener 
 			}
 			child.GetComponent<Animator>().SetBool("Hover", childCard == hitCard);
 		}
+
+        var cntr = 0;
+        for (var i = transform.childCount - 1; i >= 0; i--)
+        {
+            var systems = transform.GetChild(i).GetComponentsInChildren<ParticleSystem>(true); //should be length 1
+            foreach (var system in systems)
+            {
+                cntr++;
+                Debug.Log(cntr > (handSize - 2));
+                if (cntr > (handSize - 2))
+                    system.gameObject.SetActive(true);
+                else
+                    system.gameObject.SetActive(false);
+            }
+        }
 	}
 
 	public bool Draw() {
