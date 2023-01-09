@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a4473193fe3c2b58bf6fbe60100243, type: 3}
   m_Name: Icycle
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 919132149155446097, guid: b01594207fa033330adf9a640e73b6a1, type: 3}
   neededSeasons: 03000000
   forbiddenSeasons: 000000000100000002000000
   reward: {fileID: 11400000, guid: 33f38a3c597f7504183b5b75b29b7ab9, type: 2}
