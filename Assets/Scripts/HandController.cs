@@ -87,9 +87,9 @@ public class HandController : MonoBehaviour, SeasonHandler.SeasonChangeListener 
 		return null;
 	}
 
-	public void PlayCard(HandCard card) {
+	public void PlayCard(HandCard card, Vector3 worldPosition) {
 		card.transform.parent = null;
-		Destroy(card.gameObject);
+		card.Play(worldPosition);
 		UpdateCardPositions(true);
 	}
 
