@@ -29,16 +29,13 @@ public class SequencePlant : Plant {
 	public override bool Progress(Season season, Season actualSeason) {
         if (stage >= neededSeasons.Length)
             return false; //plants that are too ripe die. TODO Maybe change or replace later.
-        
-        if ((season & neededSeasons[stage]) != 0) {
+
+        if ((season & neededSeasons[stage]) != Season.None) {
 			stage++;
             return true;
 		}
-        else
-        {
-            // Plan survives if the season is not in forbiddenSeasons
-            return (int)(forbiddenSeasons & actualSeason) != 0;
-        }
+        // Plan survives if the season is not in forbiddenSeasons
+        return (forbiddenSeasons & actualSeason) == Season.None;
 
 	}
 
