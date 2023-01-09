@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a4473193fe3c2b58bf6fbe60100243, type: 3}
   m_Name: Fireleaf
   m_EditorClassIdentifier: 
-  prefab: {fileID: 919132149155446097, guid: c09e19125a83e804fa668d6b9041e3ca, type: 3}
+  prefab: {fileID: 6670245375700151031, guid: 1104e6cbeccd0eb4fbe9e74208181f48, type: 3}
   title: Fireleaf
   neededSeasons: 0200000004000000
   forbiddenSeasons: 8

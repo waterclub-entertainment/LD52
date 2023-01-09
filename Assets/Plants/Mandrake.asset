@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a4473193fe3c2b58bf6fbe60100243, type: 3}
   m_Name: Mandrake
   m_EditorClassIdentifier: 
-  prefab: {fileID: 919132149155446097, guid: facf2e256b02d29fe808660f5dd71f3b, type: 3}
+  prefab: {fileID: 2595694981454537241, guid: 8dae2604c8576cb41ab1592a6ad0634f, type: 3}
   title: Mandrake
   neededSeasons: 0800000002000000010000000400000008000000
   forbiddenSeasons: 15
