@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class DrawStack : MonoBehaviour {
 
@@ -29,7 +30,7 @@ public class DrawStack : MonoBehaviour {
 			}
 		}
 		if (cards.Count == 0) {
-			Debug.Log("Game over"); // TODO
+			SceneManager.LoadScene("Scenes/GameOver");
 			return null;
 		}
 

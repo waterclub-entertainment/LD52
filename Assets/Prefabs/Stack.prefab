@@ -48,19 +48,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardThickness: 0.02
   initialStack:
-  - {fileID: 11400000, guid: fd220c697bf15812bb2b195fbe40ef21, type: 2}
   - {fileID: 11400000, guid: bed67ab72c3ba7c639b01ad17a99be3a, type: 2}
   - {fileID: 11400000, guid: d9a7cadd9a31cf99d82e95a3b34cf9f9, type: 2}
+  - {fileID: 11400000, guid: 6ec1a2c5fb0938c44a682d10d402d2fd, type: 2}
+  - {fileID: 11400000, guid: 3027c44b7dcb126aeafbb542025fd1a7, type: 2}
+  - {fileID: 11400000, guid: e1e3260270acee74fa9fc22bfe6e7008, type: 2}
   - {fileID: 11400000, guid: 6f7d703f426d9997084f5e4c67bb3846, type: 2}
+  - {fileID: 11400000, guid: ab230c5c82f4a219fb77d5d258d7c717, type: 2}
+  - {fileID: 11400000, guid: c39c6cb0f81931a4d9d234f1cd62f483, type: 2}
+  - {fileID: 11400000, guid: d9a7cadd9a31cf99d82e95a3b34cf9f9, type: 2}
+  - {fileID: 11400000, guid: 33f38a3c597f7504183b5b75b29b7ab9, type: 2}
   - {fileID: 11400000, guid: e70fb6151ec81e237b55247255849711, type: 2}
   - {fileID: 11400000, guid: 33f38a3c597f7504183b5b75b29b7ab9, type: 2}
-  - {fileID: 11400000, guid: 3027c44b7dcb126aeafbb542025fd1a7, type: 2}
-  - {fileID: 11400000, guid: 6f7d703f426d9997084f5e4c67bb3846, type: 2}
   - {fileID: 11400000, guid: fd220c697bf15812bb2b195fbe40ef21, type: 2}
-  - {fileID: 11400000, guid: bed67ab72c3ba7c639b01ad17a99be3a, type: 2}
-  - {fileID: 11400000, guid: d9a7cadd9a31cf99d82e95a3b34cf9f9, type: 2}
-  - {fileID: 11400000, guid: e70fb6151ec81e237b55247255849711, type: 2}
-  - {fileID: 11400000, guid: ab230c5c82f4a219fb77d5d258d7c717, type: 2}
+  - {fileID: 11400000, guid: 6f7d703f426d9997084f5e4c67bb3846, type: 2}
 --- !u!1 &7218110444486036879
 GameObject:
   m_ObjectHideFlags: 0

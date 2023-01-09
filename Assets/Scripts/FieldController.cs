@@ -80,7 +80,7 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
                     if (card != null)
                     {
                         if (plt.setPlant(Instantiate(card.card.plant)))
-                            handController.PlayCard(card);
+                            handController.PlayCard(card, plt.transform.position + new Vector3(0, 1, 0));
                         else
                             handController.GetSelected().selected = false;
                     }

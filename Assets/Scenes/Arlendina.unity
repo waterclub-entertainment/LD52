@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414729, b: 0.121078685, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -979,84 +979,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
-        type: 3}
-      propertyPath: initialStack.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: ab230c5c82f4a219fb77d5d258d7c717,
-        type: 2}
-    - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
-        type: 3}
-      propertyPath: initialStack.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: e70fb6151ec81e237b55247255849711,
-        type: 2}
-    - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
-        type: 3}
-      propertyPath: initialStack.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: bed67ab72c3ba7c639b01ad17a99be3a,
-        type: 2}
-    - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
-        type: 3}
-      propertyPath: initialStack.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: bed67ab72c3ba7c639b01ad17a99be3a,
-        type: 2}
-    - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
-        type: 3}
-      propertyPath: initialStack.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: d9a7cadd9a31cf99d82e95a3b34cf9f9,
-        type: 2}
-    - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
-        type: 3}
-      propertyPath: initialStack.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6f7d703f426d9997084f5e4c67bb3846,
-        type: 2}
-    - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
-        type: 3}
-      propertyPath: initialStack.Array.data[6]
-      value: 
-      objectReference: {fileID: 11400000, guid: e70fb6151ec81e237b55247255849711,
-        type: 2}
-    - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
-        type: 3}
-      propertyPath: initialStack.Array.data[7]
-      value: 
-      objectReference: {fileID: 11400000, guid: e1e3260270acee74fa9fc22bfe6e7008,
-        type: 2}
-    - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
-        type: 3}
-      propertyPath: initialStack.Array.data[8]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3027c44b7dcb126aeafbb542025fd1a7,
-        type: 2}
-    - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
-        type: 3}
-      propertyPath: initialStack.Array.data[9]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6ec1a2c5fb0938c44a682d10d402d2fd,
-        type: 2}
-    - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
-        type: 3}
-      propertyPath: initialStack.Array.data[10]
-      value: 
-      objectReference: {fileID: 11400000, guid: c39c6cb0f81931a4d9d234f1cd62f483,
-        type: 2}
-    - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
-        type: 3}
-      propertyPath: initialStack.Array.data[11]
-      value: 
-      objectReference: {fileID: 11400000, guid: d9a7cadd9a31cf99d82e95a3b34cf9f9,
-        type: 2}
-    - target: {fileID: 2848648818270134641, guid: 36b34bcc5fb121c78a3c4afec94801e6,
-        type: 3}
-      propertyPath: initialStack.Array.data[12]
-      value: 
-      objectReference: {fileID: 11400000, guid: fd220c697bf15812bb2b195fbe40ef21,
-        type: 2}
     - target: {fileID: 2848648818270134642, guid: 36b34bcc5fb121c78a3c4afec94801e6,
         type: 3}
       propertyPath: m_RootOrder
@@ -1920,6 +1842,11 @@ MonoBehaviour:
     type: 3}
   drawPerTurn: 2
   seasonHandler: {fileID: 11400000, guid: 6d9a27ed821c8ff4f911ebb5e04647c2, type: 2}
+  initialHand:
+  - {fileID: 11400000, guid: d9a7cadd9a31cf99d82e95a3b34cf9f9, type: 2}
+  - {fileID: 11400000, guid: bed67ab72c3ba7c639b01ad17a99be3a, type: 2}
+  - {fileID: 11400000, guid: fd220c697bf15812bb2b195fbe40ef21, type: 2}
+  - {fileID: 11400000, guid: 3027c44b7dcb126aeafbb542025fd1a7, type: 2}
 --- !u!4 &2102832829
 Transform:
   m_ObjectHideFlags: 0
