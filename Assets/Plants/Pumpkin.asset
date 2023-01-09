@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4408940584550480324, guid: 770977033d5d94f4980bcae713043de2, type: 3}
   title: Pumpkin
-  neededSeasons: 02000000
-  forbiddenSeasons: 000000000100000003000000
+  neededSeasons: 04000000
+  forbiddenSeasons: 11
   reward: {fileID: 11400000, guid: 3027c44b7dcb126aeafbb542025fd1a7, type: 2}
