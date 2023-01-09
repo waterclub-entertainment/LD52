@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1e9344c1729cd44996b18cfcecb587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: Spring Onion
+  message: Spinion
   p: {fileID: 5376920052606065784}
 --- !u!1001 &5303154234756941450
 PrefabInstance:
