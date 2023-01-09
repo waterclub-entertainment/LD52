@@ -77,7 +77,7 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
 
             Plot plot = beh.transform.parent.GetComponent<Plot>();
             Instantiate(harvestPrefab, plot.transform.position, Quaternion.identity);
-            plot.removePlant();
+            plot.removePlant(false);
         }
     }
 

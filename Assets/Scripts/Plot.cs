@@ -156,14 +156,17 @@ public class Plot : MonoBehaviour
         return plant;
     }
 
-    public void removePlant()
+    public void removePlant(bool shouldRetain = true)
     {
         if (plant)
         {
-            HarvestStack harvestStack = GameObject.FindObjectOfType<HarvestStack>();
-            PlantBehavior beh = plant.GetComponent<PlantBehavior>();
-            Plant p = beh.p;
-            // harvestStack.AddHidden(p.HarvestReward()); //this is unsafe
+            if (shouldRetain)
+            {
+                HarvestStack harvestStack = GameObject.FindObjectOfType<HarvestStack>();
+                PlantBehavior beh = plant.GetComponent<PlantBehavior>();
+                Plant p = beh.p;
+                harvestStack.AddHidden(p.HarvestReward()); //this is unsafe
+            }
             Destroy(plant);
         }
         plant = null;
