@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1e9344c1729cd44996b18cfcecb587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: Dandelion
+  message: Corpse Flower
   p: {fileID: 8665777159352433249}
 --- !u!114 &-6883099022764003215
 MonoBehaviour:

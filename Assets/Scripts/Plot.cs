@@ -124,6 +124,25 @@ public class Plot : MonoBehaviour
         //maybe this should be moved down the line?
         if (plant != null)
             return false;
+
+        // Prevent corpseflower from being planted in a position where it would die
+        if (p.title.Equals("CorpseFlower")) {
+            FieldController fieldController = transform.parent.GetComponent<FieldController>();
+            bool hasFallow = false;
+            foreach (GameObject prop in fieldController.ctx.getNeighbors(x, y)) {
+                Plot plot = prop.GetComponent<Plot>();
+                GameObject pl = plot.getPlant();
+                if (pl == null)
+                    continue;
+                Plant plnt = pl.GetComponent<PlantBehavior>().p;
+                if (plnt.title == "Fallow")
+                    hasFallow |= true;
+            }
+            if (!hasFallow) {
+                return false;
+            }
+        }
+
         plant = Instantiate(p.prefab) as GameObject;
         plant.transform.SetParent(this.transform, false);
         PlantBehavior beh = plant.GetComponent<PlantBehavior>();
@@ -131,6 +150,7 @@ public class Plot : MonoBehaviour
         beh.setPlant(p, x, y);
         return true;
     }
+
     public GameObject getPlant()
     {
         return plant;
