@@ -22,4 +22,8 @@ public class MenuController : MonoBehaviour {
 		}
 	}
 
+	public void ToggleFullscreen() {
+		Screen.fullScreen = !Screen.fullScreen;
+	}
+
 }
