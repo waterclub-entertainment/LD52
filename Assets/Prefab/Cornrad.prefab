@@ -71,7 +71,7 @@ MonoBehaviour:
     type: 3}
   autumnNextSeasonEffect: {fileID: 6332921688476344077, guid: 907473efe42c4d3d39a7d4c9b0bbb956,
     type: 3}
-  animator: {fileID: 0}
+  animator: {fileID: 1824493275015376101}
 --- !u!114 &2187299704652515379
 MonoBehaviour:
   m_ObjectHideFlags: 0
