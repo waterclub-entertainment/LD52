@@ -8,9 +8,12 @@ public class PlantBehavior : MonoBehaviour
     public GameObject springNextSeasonEffect;
     public GameObject summerNextSeasonEffect;
     public GameObject autumnNextSeasonEffect;
+    public Animator animator;
 
     private GameObject nextSeasonEffect = null;
     private float plantingTime = 0;
+
+    private float lastStage;
 
     public void setPlant(Plant p, int x, int y)
     {
@@ -36,6 +39,7 @@ public class PlantBehavior : MonoBehaviour
         if (src != null) {
             src.Play();
         }
+        lastStage = 0;
     }
 
     void Update() {
@@ -52,6 +56,16 @@ public class PlantBehavior : MonoBehaviour
     {
         float scale = p.GrowthStage() * 0.5f + 0.5f;
         transform.localScale = new Vector3(scale, scale, scale);
+
+        if (animator != null)
+            if (scale != lastStage)
+            {
+                animator.SetTrigger("HasGrown");
+                if (scale == 1)
+                    animator.SetTrigger("FinishedGrowth");
+            }
+        lastStage = scale;
+
         // Destroy old effect
         if (nextSeasonEffect != null) {
             Destroy(nextSeasonEffect);
