@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Mushroom
   m_EditorClassIdentifier: 
   prefab: {fileID: 4534683394608548096, guid: 6abeebc36ac6c4c4793051ecb279c78e, type: 3}
+  title: Mushroom
   neededSeasons: 0300000003000000
   forbiddenSeasons: 000000000100000002000000
   reward: {fileID: 11400000, guid: e70fb6151ec81e237b55247255849711, type: 2}

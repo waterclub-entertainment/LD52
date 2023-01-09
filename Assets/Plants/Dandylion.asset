@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Dandylion
   m_EditorClassIdentifier: 
   prefab: {fileID: 7763739541058707930, guid: 7ef1ae968a52ee64c83c2422194f6aba, type: 3}
-  neededSeasons: 01000000
-  forbiddenSeasons: 000000000200000003000000
+  title: Dandelion
+  neededSeasons: 020000000100000004000000
+  forbiddenSeasons: 8
   reward: {fileID: 11400000, guid: fd220c697bf15812bb2b195fbe40ef21, type: 2}

@@ -4,14 +4,34 @@ using UnityEngine;
 
 public class Plot : MonoBehaviour
 {
-    Nullable<Season> actualSeason; //this keeps track of the base state. Relevant to apply multiple mutations on tick
+    Season actualSeason; //this keeps track of the base state. Relevant to apply multiple mutations on tick
+    public Plant fallowPlant;
     int x, y;
     int initialized = 0;
 
     //TODO add mutations for effects.
-    public Nullable<Season> season; //does this need to be a collection of seassons due to plants?
-    public bool guarded;
-    public int tickSize;
+    [HideInInspector]
+    public Season season; //does this need to be a collection of seassons due to plants?
+    [HideInInspector]
+    public bool guarded; //TODO
+
+    [HideInInspector]
+    public bool shouldKill; //Implemented
+
+    [HideInInspector]
+    public bool spawnsFallow;
+
+    public class ReplacePlant
+    {
+        public ReplacePlant(Plant p, bool replace) { this.p = p; this.replace = replace; }
+        public Plant p;
+        public bool replace;
+    }
+    [HideInInspector]
+    public ReplacePlant spawnPlant; //Implemented
+
+    public int tickSize; //TODO
+
     [HideInInspector]
     public bool hovering = false;
 
@@ -28,12 +48,14 @@ public class Plot : MonoBehaviour
     }
     public void reset()
     {
-        season = null;
+        season = Season.None;
 
         //reset mutations
-        actualSeason = null;
+        actualSeason = Season.None;
         tickSize = 1;
         guarded = false;
+        shouldKill = false;
+        spawnsFallow = true;
     }
 
     //update pipeline calls
@@ -50,42 +72,46 @@ public class Plot : MonoBehaviour
         {
             PlantBehavior beh = plant.GetComponent<PlantBehavior>();
             Plant p = beh.p;
-            p.getEffects(actualSeason.Value, ref effects, x, y);
+            p.getEffects(actualSeason, ref effects);
         }
     }
     public void apply()
     {
-        if (plant != null)
+        if (plant != null && (spawnPlant == null || !spawnPlant.replace))
         {
-            var res = plant.GetComponent<PlantBehavior>().p.Progress(season.Value);
+            var res = plant.GetComponent<PlantBehavior>().p.Progress(season, actualSeason);
             plant.GetComponent<PlantBehavior>().UpdateStage();
-            if (!res) //plant ded
+            if (!res || shouldKill) //plant ded
             {
-                Debug.Log("Plant Died");
-                Destroy(plant);
-                plant = null;
+                Debug.Log("Plant Died (Killed: " + shouldKill.ToString() + ")");
+                removePlant();
+                if (spawnsFallow)
+                    setPlant(fallowPlant);
             }
             else
             {
                 Debug.Log("Plant Grew");
             }
         }
-        else
+        else if (spawnPlant != null)
         {
-            //handle dissemination and spawning of new plants as mutations of neighbors?
+            if (plant != null && spawnPlant.replace)
+                removePlant();
+
+            setPlant(spawnPlant.p);
         }
     }
 
     public bool setPlant(Plant p)
     {
         //maybe this should be moved down the line?
-        if (plant)
+        if (plant != null)
             return false;
         plant = Instantiate(p.prefab) as GameObject;
         plant.transform.SetParent(this.transform, false);
         PlantBehavior beh = plant.GetComponent<PlantBehavior>();
 
-        beh.setPlant(p);
+        beh.setPlant(p, x, y);
         return true;
     }
     public GameObject getPlant()

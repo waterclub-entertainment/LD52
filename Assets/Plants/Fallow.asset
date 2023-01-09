@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a4473193fe3c2b58bf6fbe60100243, type: 3}
   m_Name: Fallow
   m_EditorClassIdentifier: 
+  prefab: {fileID: 6281025357597004065, guid: 76e7981c41eeb2b4cb999552192b47b1, type: 3}
   title: Fallow
-  image: {fileID: 0}
-  neededSeasons: 00000000010000000200000003000000
-  forbiddenSeasons: 
-  stage: 0
+  neededSeasons: 00000000
+  forbiddenSeasons: 0
+  reward: {fileID: 0}

@@ -111,8 +111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8de740845a71844f9d627d01ace45e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallowPlant: {fileID: 11400000, guid: f072c1f08086438409df8a45ebf85565, type: 2}
   guarded: 0
+  shouldKill: 0
   tickSize: 0
+  hovering: 0
 --- !u!1001 &1373970675265383822
 PrefabInstance:
   m_ObjectHideFlags: 0

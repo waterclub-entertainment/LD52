@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class SpriteIconographer : MonoBehaviour
 {
+    [HideInInspector]
     public List<Season> iconSeasons;
-    public List<Season> fallowIconSeasons;
+    [HideInInspector]
+    public Season fallowIconSeasons;
 
     [Serializable]
     public class SeasonIcon
@@ -35,31 +37,44 @@ public class SpriteIconographer : MonoBehaviour
         }
         if (iconSeasons != null)
         {
+            int actualIncrements = 0;
             for (int i = 0; i < iconSeasons.Count; i++)
             {
+                SeasonIcon icon = seasonMap.Find(x => x.season == iconSeasons[i]);
+                if (icon == null)
+                    continue;
                 GameObject obj = Instantiate(iconPrefab) as GameObject;
                 obj.transform.SetParent(transform, false);
-                obj.transform.Translate(i * horizontalOffsetFactor, 0, 0);
+                obj.transform.Translate(actualIncrements * horizontalOffsetFactor, 0, 0);
                 Image renderer = obj.GetComponent<Image>();
-                renderer.sprite = seasonMap.Find(x => x.season == iconSeasons[i]).sprite;
+                renderer.sprite = icon.sprite;
+                actualIncrements += 1;
             }
         }
-        if (fallowIconSeasons != null)
-        {
-            for (int i = 0; i < fallowIconSeasons.Count; i++)
-            {
-                GameObject obj = Instantiate(iconPrefab) as GameObject;
-                obj.transform.SetParent(transform, false);
-                obj.transform.Translate(i * horizontalOffsetFactor, 0, 0);
-                Image renderer = obj.GetComponent<Image>();
-                renderer.sprite = seasonMap.Find(x => x.season == fallowIconSeasons[i]).sprite;
 
-                obj = Instantiate(iconPrefab) as GameObject;
-                obj.transform.SetParent(transform, false);
-                obj.transform.Translate(i * horizontalOffsetFactor, 0, 1);
-                renderer = obj.GetComponent<Image>();
-                renderer.sprite = FallowOverlay;
-            }
+        int actualIncrements1 = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            int seasonID = (1 << i) & (int)fallowIconSeasons;
+            if (seasonID == 0)
+                continue;
+            Season s = (Season)(seasonID);
+            SeasonIcon icon = seasonMap.Find(x => x.season == s);
+            if (icon == null)
+                continue;
+
+            GameObject obj = Instantiate(iconPrefab) as GameObject;
+            obj.transform.SetParent(transform, false);
+            obj.transform.Translate(actualIncrements1 * horizontalOffsetFactor, 0, 0);
+            Image renderer = obj.GetComponent<Image>();
+            renderer.sprite = seasonMap.Find(x => x.season == s).sprite;
+
+            obj = Instantiate(iconPrefab) as GameObject;
+            obj.transform.SetParent(transform, false);
+            obj.transform.Translate(actualIncrements1 * horizontalOffsetFactor, 0, 1);
+            renderer = obj.GetComponent<Image>();
+            renderer.sprite = FallowOverlay;
+            actualIncrements1 += 1;
         }
     }
 
