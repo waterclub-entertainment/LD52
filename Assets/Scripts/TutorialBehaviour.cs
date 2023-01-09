@@ -4,12 +4,20 @@ public class TutorialBehaviour : MonoBehaviour, SeasonHandler.SeasonChangeListen
 
 	public SeasonHandler seasonHandler;
 
+	private int stage = 0;
+
 	void Start() {
 		seasonHandler.listeners.Add(this);
 	}
 
 	public void onSeasonChange(Season s) {
-		gameObject.SetActive(false);
+		stage++;
+		if (stage == 1) {
+			transform.GetChild(0).gameObject.SetActive(false);
+			transform.GetChild(1).gameObject.SetActive(true);
+		} else if (stage == 2) {
+			transform.GetChild(1).gameObject.SetActive(false);
+		}
 	}
 
 }
