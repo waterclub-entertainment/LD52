@@ -16,4 +16,4 @@ MonoBehaviour:
   title: Mandrake
   neededSeasons: 0800000002000000010000000400000008000000
   forbiddenSeasons: 15
-  reward: {fileID: 0}
+  reward: {fileID: 11400000, guid: ff1efbca69f3203a985214245cb37abf, type: 2}
