@@ -10,6 +10,7 @@ public class PlantBehavior : MonoBehaviour
     public GameObject autumnNextSeasonEffect;
 
     private GameObject nextSeasonEffect = null;
+    private float plantingTime = 0;
 
     public void setPlant(Plant p, int x, int y)
     {
@@ -22,6 +23,7 @@ public class PlantBehavior : MonoBehaviour
         }
         
         UpdateStage();
+        transform.localScale = Vector3.zero;
     }
 
     // Start is called before the first frame update
@@ -29,6 +31,15 @@ public class PlantBehavior : MonoBehaviour
     {
         if (src != null) {
             src.Play();
+        }
+    }
+
+    void Update() {
+        // Planting animation
+        if (plantingTime < 1.2f) {
+            plantingTime += Time.deltaTime;
+            float scale = Mathf.Max(0, plantingTime - 0.8f) / 0.4f * 0.5f;
+            transform.localScale = new Vector3(scale, scale, scale);
         }
     }
 
