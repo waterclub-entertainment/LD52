@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4892652768350936251}
   - component: {fileID: 8665777159352433249}
   - component: {fileID: 3999006258179806993}
+  - component: {fileID: -6883099022764003215}
   m_Layer: 0
   m_Name: CorpseFlower
   m_TagString: Untagged
@@ -84,6 +85,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message: Dandelion
   p: {fileID: 8665777159352433249}
+--- !u!114 &-6883099022764003215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9221785868010131787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b37c989e0f3dcc4ab969e54e735b2b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  y: 0
+  seasons: 00000000010000000200000003000000
+  stages:
+  - 0
+  - 0.5
+  - 1
 --- !u!1001 &3515763971555962428
 PrefabInstance:
   m_ObjectHideFlags: 0

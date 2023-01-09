@@ -12,9 +12,16 @@ public class PlantBehavior : MonoBehaviour
     private GameObject nextSeasonEffect = null;
     private float plantingTime = 0;
 
-    public void setPlant(Plant p)
+    public void setPlant(Plant p, int x, int y)
     {
         this.p = p; //move
+        foreach (Effect e in GetComponents<Effect>())
+        {
+            e.x = x;
+            e.y = y;
+            this.p.RegisterEffect(e);
+        }
+        
         UpdateStage();
         transform.localScale = Vector3.zero;
     }
@@ -49,16 +56,20 @@ public class PlantBehavior : MonoBehaviour
         if (nextSeason != null) {
             switch (nextSeason) {
                 case Season.Winter:
-                    nextSeasonEffect = Instantiate(winterNextSeasonEffect, transform);
+                    if (winterNextSeasonEffect != null)
+                        nextSeasonEffect = Instantiate(winterNextSeasonEffect, transform);
                     break;
                 case Season.Spring:
-                    nextSeasonEffect = Instantiate(springNextSeasonEffect, transform);
+                    if (springNextSeasonEffect != null)
+                        nextSeasonEffect = Instantiate(springNextSeasonEffect, transform);
                     break;
                 case Season.Summer:
-                    nextSeasonEffect = Instantiate(summerNextSeasonEffect, transform);
+                    if (summerNextSeasonEffect != null)
+                        nextSeasonEffect = Instantiate(summerNextSeasonEffect, transform);
                     break;
                 case Season.Autumn:
-                    nextSeasonEffect = Instantiate(autumnNextSeasonEffect, transform);
+                    if (autumnNextSeasonEffect != null)
+                        nextSeasonEffect = Instantiate(autumnNextSeasonEffect, transform);
                     break;
             }
         }
