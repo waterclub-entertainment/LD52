@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414729, b: 0.121078685, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -316,12 +316,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 242886176}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 242886176}
+  m_maskType: 0
 --- !u!23 &242886176
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -572,12 +572,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 393268871}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 393268871}
+  m_maskType: 0
 --- !u!23 &393268871
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -744,12 +744,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 425015737}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 425015737}
+  m_maskType: 0
 --- !u!23 &425015737
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1044,12 +1044,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 552549162}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 552549162}
+  m_maskType: 0
 --- !u!23 &552549162
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1343,6 +1343,7 @@ MonoBehaviour:
   harvestPrefab: {fileID: 7933208976049986602, guid: b08613e87942a130b8a40028a333fc97,
     type: 3}
   handler: {fileID: 11400000, guid: 6d9a27ed821c8ff4f911ebb5e04647c2, type: 2}
+  fallowPlots: []
 --- !u!4 &819308296
 Transform:
   m_ObjectHideFlags: 0
@@ -1482,12 +1483,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 822111429}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 822111429}
+  m_maskType: 0
 --- !u!23 &822111429
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1703,12 +1704,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 994978353}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 994978353}
+  m_maskType: 0
 --- !u!23 &994978353
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3045,6 +3046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db68f34dd48a0b559fe5e2a5bc37672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handSize: 6
   maxHandWidth: 4
   maxCardDistance: 0.8
   cardPrefab: {fileID: 2408508332307345438, guid: 498c0c158d184762f98042433b50fc85,
