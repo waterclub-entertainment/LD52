@@ -38,6 +38,11 @@ public class HandCard : MonoBehaviour {
 		GetComponent<Animator>().SetTrigger("GotoHand");
 	}
 
+	public void Play(Vector3 worldPosition) {
+		SetTarget(worldPosition);
+		GetComponent<Animator>().SetTrigger("Play");
+	}
+
 	private void SetTarget(Vector3 targetPosition) {
 		startPosition = transform.position;
 		gotoProgress = 0.0f;
@@ -54,6 +59,10 @@ public class HandCard : MonoBehaviour {
 		if (hasTarget) {
 			transform.position = Vector3.Lerp(startPosition, targetPosition, gotoProgress);
 		}
+	}
+
+	void PlayDestroy() {
+		Destroy(gameObject);
 	}
 
 }
