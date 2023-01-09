@@ -19,7 +19,7 @@ public class HandController : MonoBehaviour, SeasonHandler.SeasonChangeListener 
 	}
 
 	void Update() {
-		if (Input.GetButtonDown("Submit")) {
+		if (Input.GetButtonDown("Submit")) { // TODO: Remove
 			Draw();
 		}
 	    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
