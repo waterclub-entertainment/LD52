@@ -58,10 +58,10 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
                 harvestStack.MigrateCardFromHidden();
             }
 
+            Plot plot = beh.transform.parent.GetComponent<Plot>();
+            Instantiate(harvestPrefab, plot.transform.position, Quaternion.identity);
+            plot.removePlant();
         }
-        Plot plot = beh.transform.parent.GetComponent<Plot>();
-        Instantiate(harvestPrefab, plot.transform.position, Quaternion.identity);
-        plot.removePlant();
     }
 
     // Update is called once per frame
