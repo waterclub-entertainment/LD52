@@ -31,7 +31,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5625611457647780193}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44,7 +45,8 @@ AudioSource:
   m_GameObject: {fileID: 7706675259742964993}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 6719775802641855384, guid: d8a4e3d78b20a98289bb551c5967de3d,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 3b54bd1012b5128489b6dbfad0bf5508, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -178,5 +180,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1e9344c1729cd44996b18cfcecb587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: Spring Onion
+  message: Spinion
   p: {fileID: 5376920052606065784}
+--- !u!1001 &5303154234756941450
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8038190665470188024}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0ba1dd212e0505866b73f970938668a3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ba1dd212e0505866b73f970938668a3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ba1dd212e0505866b73f970938668a3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ba1dd212e0505866b73f970938668a3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ba1dd212e0505866b73f970938668a3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ba1dd212e0505866b73f970938668a3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ba1dd212e0505866b73f970938668a3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ba1dd212e0505866b73f970938668a3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ba1dd212e0505866b73f970938668a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ba1dd212e0505866b73f970938668a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ba1dd212e0505866b73f970938668a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0ba1dd212e0505866b73f970938668a3,
+        type: 3}
+      propertyPath: m_Name
+      value: OnionKeeper
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0ba1dd212e0505866b73f970938668a3, type: 3}
+--- !u!4 &5625611457647780193 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ba1dd212e0505866b73f970938668a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5303154234756941450}
+  m_PrefabAsset: {fileID: 0}

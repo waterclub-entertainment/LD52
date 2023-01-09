@@ -913,6 +913,8 @@ MonoBehaviour:
   Y: 2
   plotPrefab: {fileID: 7792013042350252648, guid: 892cb79a4cdf73440bab079637073ba1,
     type: 3}
+  harvestPrefab: {fileID: 7933208976049986602, guid: b08613e87942a130b8a40028a333fc97,
+    type: 3}
   handler: {fileID: 11400000, guid: 6d9a27ed821c8ff4f911ebb5e04647c2, type: 2}
 --- !u!4 &819308296
 Transform:
@@ -1374,14 +1376,16 @@ MonoBehaviour:
   iconSeasons: 
   fallowIconSeasons: 0
   seasonMap:
-  - season: 0
-    sprite: {fileID: 21300000, guid: 255420d0e5f673541943f36af887f42c, type: 3}
   - season: 1
-    sprite: {fileID: 21300000, guid: 3bad1a149c68dea4aa8ef972ecbe6fbf, type: 3}
+    sprite: {fileID: 21300000, guid: 255420d0e5f673541943f36af887f42c, type: 3}
   - season: 2
+    sprite: {fileID: 21300000, guid: 3bad1a149c68dea4aa8ef972ecbe6fbf, type: 3}
+  - season: 4
     sprite: {fileID: 21300000, guid: db54845db9540874cbaf7a7917cb792d, type: 3}
-  - season: 3
+  - season: 8
     sprite: {fileID: 21300000, guid: 13ddc7d789fc8f94d896c43eb0064a32, type: 3}
+  - season: 15
+    sprite: {fileID: 21300000, guid: 4b1b5ed44a52b104faa67e0499ac3260, type: 3}
   FallowOverlay: {fileID: 21300000, guid: 3cfb4f7579e646f44849b8823c867778, type: 3}
   iconPrefab: {fileID: 1827261742335541777, guid: 4c2b74a43dd99fa4e9bc568e52b13fcb,
     type: 3}
@@ -1512,13 +1516,13 @@ MonoBehaviour:
   iconSeasons: 
   fallowIconSeasons: 0
   seasonMap:
-  - season: 0
-    sprite: {fileID: 21300000, guid: 255420d0e5f673541943f36af887f42c, type: 3}
   - season: 1
-    sprite: {fileID: 21300000, guid: 3bad1a149c68dea4aa8ef972ecbe6fbf, type: 3}
+    sprite: {fileID: 21300000, guid: 255420d0e5f673541943f36af887f42c, type: 3}
   - season: 2
+    sprite: {fileID: 21300000, guid: 3bad1a149c68dea4aa8ef972ecbe6fbf, type: 3}
+  - season: 4
     sprite: {fileID: 21300000, guid: db54845db9540874cbaf7a7917cb792d, type: 3}
-  - season: 3
+  - season: 8
     sprite: {fileID: 21300000, guid: 13ddc7d789fc8f94d896c43eb0064a32, type: 3}
   FallowOverlay: {fileID: 21300000, guid: 3cfb4f7579e646f44849b8823c867778, type: 3}
   iconPrefab: {fileID: 1827261742335541777, guid: 4c2b74a43dd99fa4e9bc568e52b13fcb,

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Mandrake
   m_EditorClassIdentifier: 
   plant: {fileID: 11400000, guid: eb21507241732547fbd37241d687eb80, type: 2}
-  prefab: {fileID: 0}
+  prefab: {fileID: 919132149155446097, guid: e5ac6c1cd5c32722cb380ba5a5132e64, type: 3}

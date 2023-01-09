@@ -6,6 +6,7 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
     public int X = 4;
     public int Y = 5;
     public GameObject plotPrefab;
+    public GameObject harvestPrefab;
 
     public SeasonHandler handler;
 
@@ -47,10 +48,19 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
         HarvestStack harvestStack = GameObject.FindObjectOfType<HarvestStack>();
         Card reward = beh.p.HarvestReward();
         if (reward != null) {
-            harvestStack.Add(reward);
+            if (UnityEngine.Random.value > 0.5)
+            {
+                harvestStack.Add(reward);
+            }
+            else
+            {
+                harvestStack.AddHidden(reward);
+                harvestStack.MigrateCardFromHidden();
+            }
+
         }
-        // TODO: Animation
         Plot plot = beh.transform.parent.GetComponent<Plot>();
+        Instantiate(harvestPrefab, plot.transform.position, Quaternion.identity);
         plot.removePlant();
     }
 
@@ -90,6 +100,7 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
                         {
                             var pnt_beh = plt.getPlant().GetComponent<PlantBehavior>();
                             Harvest(pnt_beh);
+
                         }
                     }
                 }

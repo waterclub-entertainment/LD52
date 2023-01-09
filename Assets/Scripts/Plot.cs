@@ -84,9 +84,12 @@ public class Plot : MonoBehaviour
             if (!res || shouldKill) //plant ded
             {
                 Debug.Log("Plant Died (Killed: " + shouldKill.ToString() + ")");
+
                 removePlant();
                 if (spawnsFallow)
+                {
                     setPlant(fallowPlant);
+                }
             }
             else
             {
@@ -122,7 +125,13 @@ public class Plot : MonoBehaviour
     public void removePlant()
     {
         if (plant)
+        {
+            HarvestStack harvestStack = GameObject.FindObjectOfType<HarvestStack>();
+            PlantBehavior beh = plant.GetComponent<PlantBehavior>();
+            Plant p = beh.p;
+            harvestStack.AddHidden(p.HarvestReward()); //this is unsafe
             Destroy(plant);
+        }
         plant = null;
     }
 
