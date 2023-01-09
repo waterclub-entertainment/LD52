@@ -1,11 +1,13 @@
 using UnityEngine;
+using System;
 
 // Controller to manage the cards in hand
 // 
 // Cards are saved as children of the controllers gameObject
 public class HandController : MonoBehaviour, SeasonHandler.SeasonChangeListener {
 
-	public float maxHandWidth = 1f;
+    public int handSize;
+    public float maxHandWidth = 1f;
 	public float maxCardDistance = 0.2f;
 	public GameObject cardPrefab;
 	public int drawPerTurn = 3;
@@ -22,9 +24,6 @@ public class HandController : MonoBehaviour, SeasonHandler.SeasonChangeListener 
 	}
 
 	void Update() {
-		if (Input.GetButtonDown("Submit")) { // TODO: Remove
-			Draw();
-		}
 	    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 		HandCard hitCard = null;
@@ -50,20 +49,34 @@ public class HandController : MonoBehaviour, SeasonHandler.SeasonChangeListener 
 		GameObject newCard = GameObject.Instantiate(cardPrefab, transform);
 		newCard.transform.position = stack.GetTopCardPosition();
 		newCard.GetComponent<HandCard>().card = card;
-		UpdateCardPositions(true);
+
+        var diff = transform.childCount - handSize;
+        for (int i = diff - 1; i >= 0; i--)
+        {
+            var crd = transform.GetChild(i).gameObject;
+            HarvestStack stk = GameObject.FindObjectOfType<HarvestStack>();
+            stk.AddHidden(crd.GetComponent<HandCard>().card);
+            Destroy(crd);
+        }
+
+        UpdateCardPositions(true);
 
 		return true;
 	}
 
 	private void UpdateCardPositions(bool animate) {
 		const float cardWidth = 0.8f;
+
+        int cardCount = Math.Min(transform.childCount, handSize);
+        int cardIdOffset = Math.Max(transform.childCount - handSize, 0);
+
 		float cardDistance = Mathf.Min(
 			maxCardDistance,
-			(maxHandWidth - cardWidth) / (transform.childCount - 1));
-		float handWidth = cardDistance * (transform.childCount - 1) + cardWidth;
+			(maxHandWidth - cardWidth) / (cardCount - 1));
+		float handWidth = cardDistance * (cardCount - 1) + cardWidth;
 		float firstCardX = -handWidth / 2.0f + cardWidth / 2;
-		for (int i = 0; i < transform.childCount; i++) {
-			Transform child = transform.GetChild(i);
+		for (int i = 0; i < cardCount; i++) {
+			Transform child = transform.GetChild(i + cardIdOffset);
 			Vector3 target =  new Vector3(
 				transform.position.x + firstCardX + i * cardDistance,
 				transform.position.y,
