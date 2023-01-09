@@ -1343,7 +1343,9 @@ MonoBehaviour:
   harvestPrefab: {fileID: 7933208976049986602, guid: b08613e87942a130b8a40028a333fc97,
     type: 3}
   handler: {fileID: 11400000, guid: 6d9a27ed821c8ff4f911ebb5e04647c2, type: 2}
-  fallowPlots: []
+  fallowPlots:
+  - x: 0
+    y: 1
 --- !u!4 &819308296
 Transform:
   m_ObjectHideFlags: 0

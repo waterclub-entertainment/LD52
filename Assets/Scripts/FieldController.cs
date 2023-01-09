@@ -34,7 +34,7 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
         foreach (var coord in fallowPlots)
         {
             var beh = ctx.getPlot(coord.x, coord.y).GetComponent<Plot>();
-            beh.setPlant(beh.fallowPlant);
+            beh.setPlantNoSound(beh.fallowPlant);
         }
     }
 
@@ -73,10 +73,10 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
                 harvestStack.MigrateCardFromHidden();
             }
 
+            Plot plot = beh.transform.parent.GetComponent<Plot>();
+            Instantiate(harvestPrefab, plot.transform.position, Quaternion.identity);
+            plot.removePlant();
         }
-        Plot plot = beh.transform.parent.GetComponent<Plot>();
-        Instantiate(harvestPrefab, plot.transform.position, Quaternion.identity);
-        plot.removePlant();
     }
 
     // Update is called once per frame
