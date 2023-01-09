@@ -163,7 +163,7 @@ public class Plot : MonoBehaviour
             HarvestStack harvestStack = GameObject.FindObjectOfType<HarvestStack>();
             PlantBehavior beh = plant.GetComponent<PlantBehavior>();
             Plant p = beh.p;
-            harvestStack.AddHidden(p.HarvestReward()); //this is unsafe
+            // harvestStack.AddHidden(p.HarvestReward()); //this is unsafe
             Destroy(plant);
         }
         plant = null;

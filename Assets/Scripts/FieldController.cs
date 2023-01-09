@@ -10,6 +10,7 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
     public GameObject harvestPrefab;
 
     public SeasonHandler handler;
+    public AudioClip harvestSound;
 
     [Serializable]
     public class PlotPosition
@@ -63,6 +64,7 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
         HarvestStack harvestStack = GameObject.FindObjectOfType<HarvestStack>();
         Card reward = beh.p.HarvestReward();
         if (reward != null) {
+            GetComponent<AudioSource>().PlayOneShot(harvestSound, 1.0f);
             if (UnityEngine.Random.value > 0.5)
             {
                 harvestStack.Add(reward);
