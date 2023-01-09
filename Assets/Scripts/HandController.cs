@@ -45,7 +45,6 @@ public class HandController : MonoBehaviour, SeasonHandler.SeasonChangeListener 
             foreach (var system in systems)
             {
                 cntr++;
-                Debug.Log(cntr > (handSize - 2));
                 if (cntr > (handSize - 2))
                     system.gameObject.SetActive(true);
                 else
