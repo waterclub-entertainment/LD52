@@ -26,11 +26,7 @@ public class PlantBehavior : MonoBehaviour
         }
         
         UpdateStage();
-        if (p.title == "Fallow") {
-            plantingTime = 1.2f;
-        } else {
-            transform.localScale = Vector3.zero;
-        }
+        transform.localScale = Vector3.zero;
     }
 
     // Start is called before the first frame update
@@ -45,6 +41,10 @@ public class PlantBehavior : MonoBehaviour
     void Update() {
         // Planting animation
         if (plantingTime < 1.2f) {
+            if (p.GrowthStage() != 0.0) {
+                UpdateStage();
+                return;
+            }
             plantingTime += Time.deltaTime;
             float scale = Mathf.Max(0, plantingTime - 0.8f) / 0.4f * 0.5f;
             transform.localScale = new Vector3(scale, scale, scale);
