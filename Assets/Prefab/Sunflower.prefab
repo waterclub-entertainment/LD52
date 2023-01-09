@@ -99,9 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  seasons: 
+  seasons: 15
   stageThreshold: 0.5
-  s: 1
+  s: 2
   disableSeason: 0
 --- !u!1001 &1033630134519124577
 PrefabInstance:
