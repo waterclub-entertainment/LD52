@@ -10,11 +10,14 @@ public class HandController : MonoBehaviour, SeasonHandler.SeasonChangeListener 
 	public GameObject cardPrefab;
 	public int drawPerTurn = 3;
 	public SeasonHandler seasonHandler;
+	public Card[] initialHand;
 
 	void Start() {
-		for (int i = 0; i < drawPerTurn; i++) {
-			Draw();
+		foreach (Card card in initialHand) {
+			GameObject newCard = GameObject.Instantiate(cardPrefab, transform);
+			newCard.GetComponent<HandCard>().card = card;
 		}
+		UpdateCardPositions(false);
 		seasonHandler.listeners.Add(this);
 	}
 
@@ -47,12 +50,12 @@ public class HandController : MonoBehaviour, SeasonHandler.SeasonChangeListener 
 		GameObject newCard = GameObject.Instantiate(cardPrefab, transform);
 		newCard.transform.position = stack.GetTopCardPosition();
 		newCard.GetComponent<HandCard>().card = card;
-		UpdateCardPositions();
+		UpdateCardPositions(true);
 
 		return true;
 	}
 
-	public void UpdateCardPositions() {
+	private void UpdateCardPositions(bool animate) {
 		const float cardWidth = 0.8f;
 		float cardDistance = Mathf.Min(
 			maxCardDistance,
@@ -66,7 +69,12 @@ public class HandController : MonoBehaviour, SeasonHandler.SeasonChangeListener 
 				transform.position.y,
 				transform.position.z
 			);
-			child.GetComponent<HandCard>().GotoHand(target);
+			if (animate) {
+				child.GetComponent<HandCard>().GotoHand(target);
+			} else {
+				child.transform.position = target;
+				child.GetComponent<Animator>().Play("Hand");
+			}
 		}
 	}
 
@@ -82,7 +90,7 @@ public class HandController : MonoBehaviour, SeasonHandler.SeasonChangeListener 
 	public void PlayCard(HandCard card) {
 		card.transform.parent = null;
 		Destroy(card.gameObject);
-		UpdateCardPositions();
+		UpdateCardPositions(true);
 	}
 
     public void onSeasonChange(Season s)
