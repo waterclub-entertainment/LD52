@@ -8,12 +8,12 @@ public abstract class Effect : MonoBehaviour
     [HideInInspector]
     public int x, y; //source coordinates
 
-    public List<Season> seasons;
+    public Season seasons;
     public float stageThreshold;
 
     public bool shouldApply(Season s, float stage)
     {
-        return seasons.Contains(s) && stageThreshold <= stage;
+        return ((seasons & s) != 0) && stageThreshold <= stage;
     }
 
     public abstract void applyEffect(PlotContext ctx);

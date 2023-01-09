@@ -31,7 +31,7 @@ public class TooltipSingleton : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void ShowTooltip(int id, string text, List<Season> seasons, List<Season> fallowSeasons)
+    public void ShowTooltip(int id, string text, List<Season> seasons, Season fallowSeasons)
     {
         gameObject.SetActive(true);
         this.text.text = text;

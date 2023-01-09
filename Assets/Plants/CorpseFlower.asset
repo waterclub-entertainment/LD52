@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 9221785868010131787, guid: b1c504a5973679948b66bef8a8f9e3be, type: 3}
   title: CorpseFlower
-  neededSeasons: 020000000000000001000000
-  forbiddenSeasons: 
+  neededSeasons: 040000000100000002000000
+  forbiddenSeasons: 0
   reward: {fileID: 11400000, guid: 6ec1a2c5fb0938c44a682d10d402d2fd, type: 2}
