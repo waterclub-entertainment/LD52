@@ -105,6 +105,20 @@ public class Plot : MonoBehaviour
         }
     }
 
+    public bool setPlantNoSound(Plant p)
+    {
+        //maybe this should be moved down the line?
+        if (plant != null)
+            return false;
+        plant = Instantiate(p.prefab) as GameObject;
+        plant.GetComponent<AudioSource>().enabled = false; // no sound
+        plant.transform.SetParent(this.transform, false);
+        PlantBehavior beh = plant.GetComponent<PlantBehavior>();
+
+        beh.setPlant(p, x, y);
+        return true;
+    }
+
     public bool setPlant(Plant p)
     {
         //maybe this should be moved down the line?

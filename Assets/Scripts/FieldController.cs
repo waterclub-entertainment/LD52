@@ -34,7 +34,7 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
         foreach (var coord in fallowPlots)
         {
             var beh = ctx.getPlot(coord.x, coord.y).GetComponent<Plot>();
-            beh.setPlant(beh.fallowPlant);
+            beh.setPlantNoSound(beh.fallowPlant);
         }
     }
 

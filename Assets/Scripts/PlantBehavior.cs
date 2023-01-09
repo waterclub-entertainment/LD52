@@ -23,7 +23,11 @@ public class PlantBehavior : MonoBehaviour
         }
         
         UpdateStage();
-        transform.localScale = Vector3.zero;
+        if (p.title == "Fallow") {
+            plantingTime = 1.2f;
+        } else {
+            transform.localScale = Vector3.zero;
+        }
     }
 
     // Start is called before the first frame update
