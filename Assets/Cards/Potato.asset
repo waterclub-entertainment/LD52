@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Potato
   m_EditorClassIdentifier: 
   plant: {fileID: 11400000, guid: 76014f6d688d79f3096c3b257621ef08, type: 2}
-  prefab: {fileID: 919132149155446097, guid: 88e783fdfcd28d33ea386a9af61b0b38, type: 3}
+  prefab: {fileID: 919132149155446097, guid: 270e8ddb7d70b8598997d4d5de1fb4c8, type: 3}
