@@ -10,7 +10,6 @@ public class DrawStack : MonoBehaviour {
 	private List<Card> cards;
 
 	void Start() {
-		// TODO
 		cards = new List<Card>();
 		foreach (Card card in initialStack) {
 			cards.Add(Instantiate(card));

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Icycle
   m_EditorClassIdentifier: 
   plant: {fileID: 11400000, guid: 5e5e82cb0aa992030bf7eb13ff61e56a, type: 2}
-  prefab: {fileID: 919132149155446097, guid: 88e783fdfcd28d33ea386a9af61b0b38, type: 3}
+  prefab: {fileID: 919132149155446097, guid: 46b967fe289ab1e3ea17333e7cfc03a9, type: 3}

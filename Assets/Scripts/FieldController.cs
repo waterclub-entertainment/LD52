@@ -6,6 +6,7 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
     public int X = 4;
     public int Y = 5;
     public GameObject plotPrefab;
+    public GameObject harvestPrefab;
 
     public SeasonHandler handler;
 
@@ -58,8 +59,8 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
             }
 
         }
-        // TODO: Animation
         Plot plot = beh.transform.parent.GetComponent<Plot>();
+        Instantiate(harvestPrefab, plot.transform.position, Quaternion.identity);
         plot.removePlant();
     }
 
