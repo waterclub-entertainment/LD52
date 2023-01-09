@@ -17,6 +17,9 @@ public class TutorialBehaviour : MonoBehaviour, SeasonHandler.SeasonChangeListen
 			transform.GetChild(1).gameObject.SetActive(true);
 		} else if (stage == 2) {
 			transform.GetChild(1).gameObject.SetActive(false);
+			transform.GetChild(2).gameObject.SetActive(true);
+		} else if (stage == 3) {
+			transform.GetChild(2).gameObject.SetActive(false);
 		}
 	}
 
