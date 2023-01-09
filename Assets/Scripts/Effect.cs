@@ -13,7 +13,7 @@ public abstract class Effect : MonoBehaviour
 
     public bool shouldApply(Season s, float stage)
     {
-        return ((seasons & s) != 0) && stageThreshold <= stage;
+        return ((seasons & s) != Season.None) && (stageThreshold <= stage);
     }
 
     public abstract void applyEffect(PlotContext ctx);
