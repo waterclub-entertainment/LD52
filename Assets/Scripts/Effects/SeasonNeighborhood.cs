@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class SeasonNeighborhood : Effect
 {
@@ -16,6 +17,7 @@ public class SeasonNeighborhood : Effect
                 plot.season = (Season)((int)plot.season & ~(int)s);
             else
                 plot.season = (Season)((int)plot.season | (int)s);
+            Debug.Log(plot.season);
         }
     }
 }
