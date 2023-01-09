@@ -77,7 +77,8 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
                 if (Input.GetMouseButtonDown(0)) {
                     HandController handController = GameObject.FindObjectOfType<HandController>();
                     HandCard card = handController.GetSelected();
-                    if (card != null) {
+                    if (card != null)
+                    {
                         if (plt.setPlant(Instantiate(card.card.plant)))
                             handController.PlayCard(card);
                         else

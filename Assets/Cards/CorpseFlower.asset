@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f8fed423a96f2e4185ea584ccea1618, type: 3}
-  m_Name: Pumpkin
+  m_Name: CorpseFlower
   m_EditorClassIdentifier: 
-  plant: {fileID: 11400000, guid: 3bcdc15e163beceb2a9e835d86931526, type: 2}
-  prefab: {fileID: 919132149155446097, guid: be171257e8bba0c44b7c23aaa6ebd585, type: 3}
+  plant: {fileID: 11400000, guid: 7fb50427749faf74cb8e57e3d6df825e, type: 2}
+  prefab: {fileID: 919132149155446097, guid: 3cab810c82dde28ed8e9cd245c7fb57d, type: 3}

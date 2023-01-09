@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f8fed423a96f2e4185ea584ccea1618, type: 3}
-  m_Name: Pumpkin
+  m_Name: Sunflower
   m_EditorClassIdentifier: 
-  plant: {fileID: 11400000, guid: 3bcdc15e163beceb2a9e835d86931526, type: 2}
-  prefab: {fileID: 919132149155446097, guid: be171257e8bba0c44b7c23aaa6ebd585, type: 3}
+  plant: {fileID: 11400000, guid: 2e35c6da5038e014cb88302e775f560a, type: 2}
+  prefab: {fileID: 919132149155446097, guid: 6e9b0d1d22d46994b9f6927d2dbffddf, type: 3}

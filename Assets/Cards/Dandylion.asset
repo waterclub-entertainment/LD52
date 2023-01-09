@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Dandylion
   m_EditorClassIdentifier: 
   plant: {fileID: 11400000, guid: 3a71059dca41e0a5cb3049be7cf2f628, type: 2}
-  prefab: {fileID: 919132149155446097, guid: 88e783fdfcd28d33ea386a9af61b0b38, type: 3}
+  prefab: {fileID: 919132149155446097, guid: 1a47edc60ae277a4aaa7cca56230b834, type: 3}
