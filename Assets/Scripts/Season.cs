@@ -14,6 +14,6 @@ public enum Season {
     SpringSummerWinter = 11,
     AutumnWinter = 12,
     SpringAutumnWinter = 13,
-    SummeAutumnrWinter = 14,
+    SummerAutumnWinter = 14,
     SpringSummerAutumnWinter = 15
 }
