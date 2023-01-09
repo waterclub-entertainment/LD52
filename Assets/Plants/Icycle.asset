@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Icycle
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
+  title: Icycle
   neededSeasons: 03000000
   forbiddenSeasons: 000000000100000002000000
   reward: {fileID: 11400000, guid: 33f38a3c597f7504183b5b75b29b7ab9, type: 2}

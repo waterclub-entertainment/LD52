@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8563355128715589773}
   - component: {fileID: 7368038148336378929}
   - component: {fileID: 9131379564774339022}
+  - component: {fileID: -1996213617846625300}
   m_Layer: 0
   m_Name: Deadshroom
   m_TagString: Untagged
@@ -84,6 +85,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message: Deadshroom
   p: {fileID: 8563355128715589773}
+--- !u!114 &-1996213617846625300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534683394608548096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8c670dc487ad74d9daf39b3081bfec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  y: 0
+  seasons: 03000000
+  stageThreshold: 0.5
 --- !u!1001 &9197576354252353523
 PrefabInstance:
   m_ObjectHideFlags: 0

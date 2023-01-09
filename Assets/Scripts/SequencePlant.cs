@@ -21,7 +21,7 @@ public class SequencePlant : Plant {
     }
 
 	public override Card HarvestReward() {
-		if (stage == neededSeasons.Length) {
+		if (stage == neededSeasons.Length && reward != null) {
 			return Instantiate(reward);
 		}
 
@@ -38,11 +38,6 @@ public class SequencePlant : Plant {
 		// Plan survives if the season is not in forbiddenSeasons
 		return (forbiddenSeasons == null || forbiddenSeasons.Length == 0) ? true : Array.IndexOf(forbiddenSeasons, season) == -1;
 	}
-
-    public override void getEffects(Season season, ref List<Effect> effects, int x, int y)
-    {
-        //no effect
-    }
 
     public override float GrowthStage()
     {

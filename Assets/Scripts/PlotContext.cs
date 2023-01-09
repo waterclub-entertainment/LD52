@@ -33,18 +33,18 @@ public class PlotContext
 
     public List<GameObject> getNeighbors(int x, int y)
     {
-        List<GameObject> plots = new List<GameObject>();
+        List<GameObject> plts = new List<GameObject>();
 
         if (validate(x - 1, y))
-            plots.Add(getPlot(x - 1, y));
+            plts.Add(getPlot(x - 1, y));
         if (validate(x + 1, y))
-            plots.Add(getPlot(x + 1, y));
+            plts.Add(getPlot(x + 1, y));
         if (validate(x, y - 1))
-            plots.Add(getPlot(x, y - 1));
+            plts.Add(getPlot(x, y - 1));
         if (validate(x, y + 1))
-            plots.Add(getPlot(x, y + 1));
-
-        return plots;
+            plts.Add(getPlot(x, y + 1));
+        
+        return plts;
     }
 
     public void applyToAll(Action<Plot> op)
@@ -65,7 +65,7 @@ public class PlotContext
 
     private bool validate(int x, int y)
     {
-        return (x >= 0 || x < X || y >= 0 || y < Y);
+        return (x >= 0 && x < X && y >= 0 && y < Y);
 
     }
 }

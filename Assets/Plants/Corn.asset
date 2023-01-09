@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Corn
   m_EditorClassIdentifier: 
   prefab: {fileID: 7140569761091108935, guid: 20cc8c0305939974592d82e724e5f510, type: 3}
+  title: Corn
   neededSeasons: 000000000100000002000000
   forbiddenSeasons: 03000000
-  reward: {fileID: 0}
+  reward: {fileID: 11400000, guid: e1e3260270acee74fa9fc22bfe6e7008, type: 2}

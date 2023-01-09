@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Cactus
   m_EditorClassIdentifier: 
   prefab: {fileID: 7080694927739973595, guid: fb2381d3f345e664a9060eaa13d117b5, type: 3}
+  title: Cactus
   neededSeasons: 010000000100000001000000
   forbiddenSeasons: 03000000
   reward: {fileID: 11400000, guid: ab230c5c82f4a219fb77d5d258d7c717, type: 2}
