@@ -93,7 +93,7 @@ public class Plot : MonoBehaviour
             }
             else
             {
-                Debug.Log("Plant Grew");
+                // Debug.Log("Plant Grew");
             }
         }
         else if (spawnPlant != null)

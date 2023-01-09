@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  seasons: 3000000
+  seasons: 8
   stageThreshold: 0.5
 --- !u!82 &-8389901451818328547
 AudioSource:
