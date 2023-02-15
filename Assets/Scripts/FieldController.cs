@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -49,11 +50,12 @@ public class FieldController : MonoBehaviour, SeasonHandler.SeasonChangeListener
         //iterate plant effects over season
         ctx.applyToAll((Plot plt) => { plt.computeEffects(ref effects); });
 
-        //TODO: order effects
         foreach (Effect e in effects)
         {
             e.applyEffect(ctx);
         }
+
+        ctx.applyToAllEx((Plot plt, PlotContext ctx, int x, int y) => { plt.computeNeighbors(ctx.getNeighbors(x, y).Select(p => p.GetComponent<Plot>() as Plot).ToList()); });
 
         //update plants
         ctx.applyToAll((Plot plt) => { plt.apply(); });

@@ -8,18 +8,18 @@ public class Plot : MonoBehaviour
     public Plant fallowPlant;
     int x, y;
     int initialized = 0;
+    public List<Plant> neighborPlants  = new List<Plant>();
 
-    //TODO add mutations for effects.
+    //mutations for effects.
     [HideInInspector]
     public Season season; //does this need to be a collection of seassons due to plants?
     [HideInInspector]
     public bool guarded; //TODO
-
     [HideInInspector]
     public bool shouldKill; //Implemented
-
     [HideInInspector]
     public bool spawnsFallow;
+
 
     public class ReplacePlant
     {
@@ -45,6 +45,7 @@ public class Plot : MonoBehaviour
             transform.localPosition = new Vector3(x, 0, y);
         initialized |= 2;
         reset();
+        guarded = false;
     }
     public void reset()
     {
@@ -53,7 +54,6 @@ public class Plot : MonoBehaviour
         //reset mutations
         actualSeason = Season.None;
         tickSize = 1;
-        guarded = false;
         shouldKill = false;
         spawnsFallow = true;
     }
@@ -81,7 +81,7 @@ public class Plot : MonoBehaviour
         {
             var res = plant.GetComponent<PlantBehavior>().p.Progress(season, actualSeason);
             plant.GetComponent<PlantBehavior>().UpdateStage();
-            if (!res || shouldKill) //plant ded
+            if ((!res || shouldKill) && !guarded) //plant ded
             {
                 Debug.Log("Plant Died (Killed: " + shouldKill.ToString() + ")");
 
@@ -93,15 +93,44 @@ public class Plot : MonoBehaviour
             }
             else
             {
+                guarded = false;
                 // Debug.Log("Plant Grew");
             }
         }
-        else if (spawnPlant != null)
+        else if (plant == null)
+        {
+            computePlantSpawn();
+        }
+        neighborPlants.Clear();
+    }
+    public void computeNeighbors(List<Plot> neighbors)
+    {
+        if (plant == null)
+            return;
+        foreach (var plot in neighbors) //reference for neighbors
+        {
+            if (plot.plant != null)
+                continue;
+            var beh = plant.GetComponent<PlantBehavior>() as PlantBehavior;
+            plot.neighborPlants.Add(beh.p);
+        }
+    }
+
+    public void computePlantSpawn()
+    {
+        if (spawnPlant != null)
         {
             if (plant != null && spawnPlant.replace)
                 removePlant();
 
             setPlant(spawnPlant.p);
+        }
+        else if (spawnPlant == null)
+        {
+
+            var plantList = PlantDisemination._instance.computePossiblePlants(neighborPlants);
+            if (plantList.Count > 0)
+                setPlant(plantList[0]);
         }
     }
 
